@@ -8,16 +8,15 @@ import Link from 'next/link';
 
 const Navbar = () => {
     const { category } = useScreenSize();
-
     if (category !== "lg") {
         return <NavbarMobile />
     }
 
     return (
-        <div className='sticky top-0 z-50 flex justify-between p-7 bg-black text-white font-semibold'>
-            <Link href="/">
-                App logo
-            </Link>
+        <div className='sticky top-0 z-50 flex justify-between items-center p-5 bg-black text-white font-semibold'>
+            <div>
+
+            </div>
             <div className='flex space-x-12'>
                 {navbar.map((item, index) => (
                     <Link key={index} href={item.path} className='uppercase' >

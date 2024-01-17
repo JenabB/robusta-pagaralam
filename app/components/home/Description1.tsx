@@ -1,7 +1,5 @@
 'use client'
-import Image from 'next/image'
 import React from 'react'
-import { motion } from 'framer-motion';
 import useScreenSize from '@/app/hooks/useScreenSize';
 import CheckDetails from '../CheckDetails';
 
@@ -14,19 +12,7 @@ const Description1 = () => {
         // className='px-4 pt-10 w-3/4 mx-auto'
         >
             <div>
-                <div className='my-20 h-[300px]'>
-                    <div className='text-center font-extrabold text-4xl lg:text-5xl'>
-                        <h1 >ROBUSTA COFFEE</h1>
-                        <h1>FROM PAGAR</h1>
-                        <h1>ALAM</h1>
-                    </div>
-                    <div className='text-center my-8 p-2'>
-                        <p className='italic lg:text-md xs:text-sm'>
-                            robusta coffee grown above
-                            altitude of 1000-1400 meters above sea level
-                        </p>
-                    </div>
-                </div>
+
                 <div className='grid grid-cols-1 lg:grid-cols-2'>
                     {category !== 'lg' &&
                         <div id="second">
