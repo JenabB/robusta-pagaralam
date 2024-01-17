@@ -31,7 +31,7 @@ const Header = () => {
     }
 
     const style: any = {
-        height: isMobile ? '500px' : '650px',
+        height: isMobile ? '400px' : '650px',
         width: '100%',
         objectFit: 'cover'
     }
@@ -43,7 +43,7 @@ const Header = () => {
                     <div
                         style={{
                             backgroundImage: `url(/images/containers.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', filter: 'grayscale(90%)',
-                            height: isMobile ? '500px' : '650px', display: 'flex', justifyContent: 'center', alignItems: 'center'
+                            height: isMobile ? '450px' : '650px', display: 'flex', justifyContent: 'center', alignItems: 'center'
                         }}
                     >
                         <div className='bg-white px-2 lg:px-10 m-4 py-2'>
@@ -55,7 +55,7 @@ const Header = () => {
                     <div
                         style={{
                             backgroundImage: `url(/images/gallery/6.jpeg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', filter: 'grayscale(100%)',
-                            height: isMobile ? '500px' : '650px', display: 'flex', justifyContent: 'center', alignItems: 'center'
+                            height: isMobile ? '450px' : '650px', display: 'flex', justifyContent: 'center', alignItems: 'center'
                         }}
                     >
                         <div className='bg-white lg:w-2/4 p-2 m-4 lg:p-6'>
