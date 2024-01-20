@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link'
 import { Bars3Icon } from '@heroicons/react/24/solid';
-import { MagnifyingGlassCircleIcon } from '@heroicons/react/24/solid';
 import navbar from '../constants/navbar';
 
 const NavbarMobile = () => {
@@ -21,7 +20,6 @@ const NavbarMobile = () => {
                 <Link href="/">
                     <div className="text-white font-bold text-lg">Logo</div></Link>
                 <div>
-                    {/* <MagnifyingGlassCircleIcon className="h-6 w-6 text-white" /> */}
                 </div>
             </div>
 

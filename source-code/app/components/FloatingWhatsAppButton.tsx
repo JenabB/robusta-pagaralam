@@ -1,27 +1,31 @@
-import { FaWhatsapp } from 'react-icons/fa';
 
-const FloatingWhatsAppButton = () => {
-    // const handleWhatsAppClick = () => {
-    //     const whatsappUrl = 'https://api.whatsapp.com/send?phone=628123456789';
-    //     window.open(whatsappUrl, '_blank');
-    // };
+'use client'
+import { FaWhatsapp } from 'react-icons/fa';
+import useScreenSize from '../hooks/useScreenSize';
+
+const WhatsAppButton = () => {
+    const { category } = useScreenSize()
+    const handleWhatsAppClick = () => {
+        const whatsappUrl = 'https://api.whatsapp.com/send?phone=6287813120666';
+        window.open(whatsappUrl, '_blank');
+    };
 
     return (
         <div
+            onClick={handleWhatsAppClick}
             style={{
                 position: 'fixed',
-                bottom: '50px',
+                bottom: '70px',
                 right: '60px',
                 backgroundColor: '#25D366',
                 padding: '10px',
                 borderRadius: '50%',
                 cursor: 'pointer',
             }}
-        // onClick={handleWhatsAppClick}
         >
-            <FaWhatsapp size={30} color="#fff" />
+            <FaWhatsapp size={category !== 'lg' ? 40 : 50} color="#fff" />
         </div>
     );
 };
 
-export default FloatingWhatsAppButton;
+export default WhatsAppButton;

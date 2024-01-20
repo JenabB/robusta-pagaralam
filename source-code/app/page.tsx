@@ -13,11 +13,13 @@ import AboutUs from './components/AboutUs'
 import Gallery from './components/Gallery'
 import Product from './product/Products'
 import FloatingWhatsAppButton from './components/FloatingWhatsAppButton'
+import Faqs from './faqs/Faqs'
 
 export default function Home() {
   return (
     <main
     >
+      <FloatingWhatsAppButton />
       <Navbar />
       <Header />
 
@@ -26,14 +28,14 @@ export default function Home() {
       <Description2 />
       <Description3 />
       <Description4 />
-      {/* <Product /> */}
       <Gallery />
+      <Faqs />
       <RegisteredOn />
       <AboutUs />
       <footer>
         <Footer />
       </footer>
-      <FloatingWhatsAppButton />
+
     </main>
   )
 }

@@ -18,10 +18,7 @@ const AboutUs = () => {
 
     return (
         <div id='about-us'>
-            <hr style={{ border: '5px solid black' }} />
-            <div className='flex justify-center'>
-                <Image src="/images/logo.jpeg" alt="company logo" width={350} height={250} />
-            </div>
+
             <div className='grid grid-flow-row-dense grid-cols-1 lg:grid-cols-3'>
                 <div className='bg-black text-white p-3 lg:p-8 col-span-2'>
                     <p className='mb-4 p-3 text-justify'>

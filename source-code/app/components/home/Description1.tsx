@@ -10,7 +10,7 @@ const Description1 = () => {
 
     return (
         <div
-        // className='px-4 pt-10 w-3/4 mx-auto'
+            id="product"
         >
             <div>
 
