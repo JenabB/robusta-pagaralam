@@ -21,7 +21,7 @@ const NavbarMobile = () => {
                 <Link href="/">
                     <div className="text-white font-bold text-lg">Logo</div></Link>
                 <div>
-                    <MagnifyingGlassCircleIcon className="h-6 w-6 text-white" />
+                    {/* <MagnifyingGlassCircleIcon className="h-6 w-6 text-white" /> */}
                 </div>
             </div>
 

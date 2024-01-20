@@ -2,6 +2,7 @@
 import useScreenSize from '@/app/hooks/useScreenSize';
 import React from 'react'
 import CheckDetails from '../CheckDetails';
+import PriceTable from '../PriceTable';
 
 const Description2 = () => {
     const { category } = useScreenSize();
@@ -37,7 +38,7 @@ const Description2 = () => {
                             coffee, the flavor and aroma are different.
                         </p>
                         <div className='flex justify-center mt-4 mb-8'>
-                            <CheckDetails textColor='text-white' path="/product" />
+                            <PriceTable />
                         </div>
                     </div>
                 </div>}
@@ -67,7 +68,9 @@ const Description2 = () => {
                         although both are from red plucked coffee
                         coffee, the flavor and aroma are different.
                     </p>
-                    <CheckDetails textColor='text-white' path="/product" />
+                    <div className='flex justify-center mt-4 mb-8'>
+                        <PriceTable />
+                    </div>
                 </div>}
             </div>
         </div>

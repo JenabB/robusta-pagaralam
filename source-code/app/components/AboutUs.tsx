@@ -17,7 +17,7 @@ const AboutUs = () => {
 
 
     return (
-        <div>
+        <div id='about-us'>
             <hr style={{ border: '5px solid black' }} />
             <div className='flex justify-center'>
                 <Image src="/images/logo.jpeg" alt="company logo" width={350} height={250} />

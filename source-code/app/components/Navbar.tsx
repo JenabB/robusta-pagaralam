@@ -4,7 +4,6 @@ import { MagnifyingGlassCircleIcon } from '@heroicons/react/24/solid'
 import navbar from '../constants/navbar'
 import useScreenSize from '../hooks/useScreenSize'
 import NavbarMobile from './NavbarMobile';
-import Link from 'next/link';
 
 const Navbar = () => {
     const { category } = useScreenSize();
@@ -17,14 +16,17 @@ const Navbar = () => {
             <div>
 
             </div>
-            <div className='flex space-x-12'>
+            <ul className='flex space-x-12'>
                 {navbar.map((item, index) => (
-                    <Link key={index} href={item.path} className='uppercase' >
-                        {item.name}
-                    </Link>
+                    <li key={index} className='uppercase' >
+                        <a href={`${item.path}`}>
+                            {item.name}
+                        </a>
+                    </li>
                 ))}
-            </div>
-            <MagnifyingGlassCircleIcon className="h-8 w-8 text-white" />
+            </ul>
+            <div></div>
+            {/* <MagnifyingGlassCircleIcon className="h-8 w-8 text-white" /> */}
         </div>
     )
 }

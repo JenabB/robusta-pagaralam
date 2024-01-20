@@ -2,6 +2,7 @@
 import useScreenSize from '@/app/hooks/useScreenSize';
 import React from 'react'
 import CheckDetails from '../CheckDetails';
+import PriceTable from '../PriceTable';
 
 const Description4 = () => {
     const { category } = useScreenSize();
@@ -30,8 +31,8 @@ const Description4 = () => {
                             This type of coffee is more widely produced in Pagaralam city, this is because the process is not the same as red picking coffee, if red picking coffee is only picked red color, it is different from this asalan coffee, farmers pick both red and green coffee cherries simultaneously, even so the process is still considered so that when sorting it still produces quality beans.
                             produce quality beans.
                         </p>
-                        <div className='mt-4 mb-10 flex justify-center'>
-                            <CheckDetails textColor='text-white' path="/product" />
+                        <div className='mt-4 mb-8'>
+                            <PriceTable />
                         </div>
                     </div>
                 </div>}
@@ -56,8 +57,8 @@ const Description4 = () => {
                             This type of coffee is more widely produced in Pagaralam city, this is because the process is not the same as red picking coffee, if red picking coffee is only picked red color, it is different from this asalan coffee, farmers pick both red and green coffee cherries simultaneously, even so the process is still considered so that when sorting it still produces quality beans.
                             produce quality beans.
                         </p>
-                        <div className='flex justify-center'>
-                            <CheckDetails textColor='text-white' path="/product" />
+                        <div className='mt-4 mb-8'>
+                            <PriceTable />
                         </div>
                     </div>
                 </div>}

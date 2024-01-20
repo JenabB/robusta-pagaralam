@@ -11,11 +11,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import AboutUs from './components/AboutUs'
 import Gallery from './components/Gallery'
+import Product from './product/Products'
+import FloatingWhatsAppButton from './components/FloatingWhatsAppButton'
 
 export default function Home() {
   return (
     <main
-    //  className="flex min-h-screen flex-col items-center justify-between p-24"
     >
       <Navbar />
       <Header />
@@ -25,12 +26,14 @@ export default function Home() {
       <Description2 />
       <Description3 />
       <Description4 />
+      {/* <Product /> */}
       <Gallery />
       <RegisteredOn />
       <AboutUs />
       <footer>
         <Footer />
       </footer>
+      <FloatingWhatsAppButton />
     </main>
   )
 }

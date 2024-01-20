@@ -1,23 +1,23 @@
 const navbar = [
   {
     name: 'Home',
-    path: '/',
+    path: '/#',
   },
   {
     name: 'About Us',
-    path: '/about-us',
+    path: '/#about-us',
   },
   {
     name: 'Product',
-    path: '/product',
+    path: '/#product',
   },
   {
     name: 'Gallery',
-    path: '/gallery',
+    path: '/#gallery',
   },
   {
     name: 'Faqs',
-    path: '/faqs',
+    path: '/#faqs',
   },
 ];
 

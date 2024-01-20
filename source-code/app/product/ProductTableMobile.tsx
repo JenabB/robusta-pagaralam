@@ -1,9 +1,27 @@
-import React from 'react';
+import React from 'react'
 import product from '../constants/product';
+const ProductTableMobile = () => {
 
-const ProductTable = () => {
     return (
-        <div className="w-3/6 mx-auto mt-20">
+        <div className="m-2 ">
+            {product.map((item, index) => (
+                <div key={index} className='bg-white p-4 my-8 rounded-lg'>
+                    <div>
+                        <h1 className='font-bold'>Product</h1>
+                        <p>{item.product}</p>
+                    </div>
+                    <div className='grid grid-cols-2 mt-4'>
+                        <div >
+                            <h1 className='font-bold'>Grade</h1>
+                            <p>{item.grade}</p>
+                        </div>
+                        <div>
+                            <h1 className='font-bold'>Price</h1>
+                            <p>{item.price}</p>
+                        </div>
+                    </div>
+                </div>
+            ))}
             <table className="w-full border-collapse border border-gray-300">
                 <thead className="bg-gray-400">
                     <tr>
@@ -25,7 +43,7 @@ const ProductTable = () => {
                 </tbody>
             </table>
         </div>
-    );
-};
+    )
+}
 
-export default ProductTable;
+export default ProductTableMobile

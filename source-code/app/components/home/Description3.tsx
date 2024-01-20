@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import useScreenSize from '@/app/hooks/useScreenSize';
 import CheckDetails from '../CheckDetails';
+import PriceTable from '../PriceTable';
 
 
 const Description3 = () => {
@@ -37,8 +38,8 @@ const Description3 = () => {
                             plastic layer sacks then tightly closed and
                             allowed to stand for some time.
                         </p>
-                        <div className='mt-4 mb-12'>
-                            <CheckDetails textColor='text-black' path="/product" />
+                        <div className='mt-4 mb-8'>
+                            <PriceTable />
                         </div>
                     </div>
                 }
@@ -54,7 +55,9 @@ const Description3 = () => {
                         plastic layer sacks then tightly closed and
                         allowed to stand for some time.
                     </p>
-                    <CheckDetails textColor='text-black' path="/product" />
+                    <div className='mt-4 mb-8'>
+                        <PriceTable />
+                    </div>
                 </div>}
                 {category === 'lg' && <div id="second">
                     <img
