@@ -15,8 +15,8 @@ const WhatsAppButton = () => {
             onClick={handleWhatsAppClick}
             style={{
                 position: 'fixed',
-                bottom: '70px',
-                right: '60px',
+                bottom: '40px',
+                right: '40px',
                 backgroundColor: '#25D366',
                 padding: '10px',
                 borderRadius: '50%',
