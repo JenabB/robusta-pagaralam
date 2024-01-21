@@ -1,3 +1,4 @@
+'use client'
 import Navbar from './components/Navbar'
 import Header from './components/home/Header'
 import Description1 from './components/home/Description1'
@@ -15,10 +16,12 @@ import Product from './product/Products'
 import FloatingWhatsAppButton from './components/FloatingWhatsAppButton'
 import Faqs from './faqs/Faqs'
 
+
 export default function Home() {
   return (
     <main
     >
+
       <FloatingWhatsAppButton />
       <Navbar />
       <Header />

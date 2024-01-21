@@ -21,6 +21,7 @@ const WhatsAppButton = () => {
                 padding: '10px',
                 borderRadius: '50%',
                 cursor: 'pointer',
+                zIndex: 2000
             }}
         >
             <FaWhatsapp size={category !== 'lg' ? 40 : 50} color="#fff" />

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link'
 import { Bars3Icon } from '@heroicons/react/24/solid';
 import navbar from '../constants/navbar';
+import Image from 'next/image';
 
 const NavbarMobile = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -17,8 +18,14 @@ const NavbarMobile = () => {
                 <button onClick={toggleMobileMenu} className="lg:hidden text-white focus:outline-none">
                     <Bars3Icon className="w-6 h-6" />
                 </button>
-                <Link href="/">
-                    <div className="text-white font-bold text-lg">Logo</div></Link>
+                <a href='/'>
+                    <Image
+                        alt="logo"
+                        src="/images/fazza-icon-circle.png"
+                        width={30}
+                        height={30}
+                    />
+                </a>
                 <div>
                 </div>
             </div>
