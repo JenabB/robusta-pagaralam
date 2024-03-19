@@ -11,6 +11,10 @@ const Gallery = () => {
         '/images/gallery/10.jpeg', '/images/gallery/12.jpeg',
     ]
 
+    const imagesWithText = [
+        { image: '/images/gallery/march-2024.webp', year: '2024', month: 'March', date: '17', description: 'Initate meeting with the Pagaralam Coffee Activist Community regarding supplier cooperation.' }
+    ]
+
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -28,15 +32,34 @@ const Gallery = () => {
     }, []);
 
     return (
-        <div id="gallery" className='bg-white mt-4'>
-            <div className='p-3 pl-4 lg:p-8'>
-                <div className="flex overflow-x-scroll space-x-4">
-                    {images.map((item, index) => <div key={index}>
-                        <div style={{ height: isMobile ? '250px' : '450px', width: isMobile ? '300px' : '600px' }} className=''>
-                            <Image width={isMobile ? 300 : 600} height={isMobile ? 250 : 450} className="rounded-md" src={item} alt="gallery" />
+        <div>
+            <div id="gallery" className='bg-white mt-4'>
+                <div className='p-3 pl-4 lg:p-8'>
+                    <div className="flex overflow-x-scroll space-x-4">
+                        {images.map((item, index) => <div key={index}>
+                            <div style={{ height: isMobile ? '250px' : '450px', width: isMobile ? '300px' : '600px' }} className=''>
+                                <Image width={isMobile ? 300 : 600} height={isMobile ? 250 : 450} className="rounded-md" src={item} alt="gallery" />
+                            </div>
                         </div>
+                        )}
                     </div>
-                    )}
+                </div>
+            </div>
+            <div id="gallery" className='bg-white mt-2'>
+                <div className='p-3 pl-4 lg:p-8'>
+                    <div className="flex overflow-x-scroll space-x-4">
+                        {imagesWithText.map((item, index) => <div key={index}>
+                            <div style={{ width: isMobile ? '300px' : '500px' }} className=''>
+                                <Image width={isMobile ? 300 : 500} height={isMobile ? 250 : 450} src={item.image} alt="gallery" />
+                                <p className='my-4 px-2 '>{item.description}</p>
+                                <div className='bg-black p-2 mb-4'>
+                                    <h1 className='font-bold uppercase text-white'>{item.year + " " + item.month + ' ' + item.date}</h1>
+                                </div>
+
+                            </div>
+                        </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
