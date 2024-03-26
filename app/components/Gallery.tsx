@@ -12,7 +12,8 @@ const Gallery = () => {
     ]
 
     const imagesWithText = [
-        { image: '/images/gallery/march-2024.webp', year: '2024', month: 'March', date: '17', description: 'Initate meeting with the Pagaralam Coffee Activist Community regarding supplier cooperation.' }
+        { image: '/images/gallery/march-2024.webp', year: '2024', month: 'March', date: '17', description: 'Initate meeting with the Pagaralam Coffee Activist Community regarding supplier cooperation.' },
+        { image: '/images/gallery/2024-03-26.jpeg', year: '2024', month: 'March', date: '26', description: 'Chat to recognize the potential of local tea and cooperation in export with PTPN7.' }
     ]
 
     const [isMobile, setIsMobile] = useState(false);
@@ -46,7 +47,16 @@ const Gallery = () => {
                 </div>
             </div>
             <div id="gallery" className='bg-white mt-2'>
+
                 <div className='p-3 pl-4 lg:p-8'>
+                    <div className='bg-black text-white p-2 uppercase font-bold mb-4'>
+                        <h1>Our Agenda</h1>
+                    </div>
+                    {/* <div>
+                        <select className='bg-black text-white p-2 px-4 mb-4 font-semibold'>
+                            <option value='2024'>2024</option>
+                        </select>
+                    </div> */}
                     <div className="flex overflow-x-scroll space-x-4">
                         {imagesWithText.map((item, index) => <div key={index}>
                             <div style={{ width: isMobile ? '300px' : '500px' }} className=''>

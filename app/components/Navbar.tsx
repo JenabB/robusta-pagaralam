@@ -26,7 +26,7 @@ const Navbar = () => {
             <ul className='flex space-x-12'>
                 {navbar.map((item, index) => (
                     <li key={index}>
-                        <a href={`${item.path}`}>
+                        <a className='font-caveat font-bold text-2xl' href={`${item.path}`}>
                             {item.name}
                         </a>
                     </li>

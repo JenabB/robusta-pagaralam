@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -17,4 +20,20 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: rgb(var(--foreground-rgb));
+}
+
+.font-caveat {
+  font-family: 'Caveat', cursive;
+  font-optical-sizing: auto;
+}
+
+.font-edu {
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-pacifico {
+  font-family: 'Pacifico', cursive;
+  font-style: normal;
 }

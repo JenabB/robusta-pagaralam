@@ -23,11 +23,11 @@ const Description2 = () => {
                 </div>}
                 {category !== 'lg' && <div className='flex flex-col justify-center items-center text-white bg-black'>
                     <div className='mb-4 mt-8'>
-                        <h1 className='font-extrabold text-5xl'>ROBUSTA</h1>
-                        <h1 className='font-extrabold text-5xl'>PEABERRY</h1>
+                        <h1 className='font-extrabold font-pacifico text-5xl'>Robusta</h1>
+                        <h1 className='font-extrabold font-pacifico text-5xl'>Peaberry</h1>
                     </div>
                     <div className='w-3/4 mx-auto'>
-                        <p>
+                        <p className='font-edu my-4 font-2xl'>
                             Robusta Peaberry is known as
                             term lanang coffee by the people of
                             Pagaralam city because the coffee beans
@@ -55,10 +55,10 @@ const Description2 = () => {
                 </div>}
                 {category === 'lg' && <div className='w-3/5 mx-auto flex flex-col justify-center items-center'>
                     <div className='mb-4'>
-                        <h1 className='font-extrabold text-5xl'>ROBUSTA</h1>
-                        <h1 className='font-extrabold text-5xl'>PEABERRY</h1>
+                        <h1 className='font-extrabold  font-pacifico text-7xl'>Robusta</h1>
+                        <h1 className='font-extrabold  font-pacifico text-7xl'>Peaberry</h1>
                     </div>
-                    <p>
+                    <p className='font-edu font-2xl my-4'>
                         Robusta Peaberry is known as
                         term lanang coffee by the people of
                         Pagaralam city because the coffee beans

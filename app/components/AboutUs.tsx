@@ -12,7 +12,7 @@ const AboutUs = () => {
         { name: 'Bank Account', value: '11' },
         { name: 'Phone', value: '123' },
         { name: 'Email', value: '' },
-        { name: 'Website', value: '' },
+
     ]
 
 
