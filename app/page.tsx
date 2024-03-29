@@ -15,6 +15,9 @@ import Gallery from './components/Gallery'
 import Product from './product/Products'
 import FloatingWhatsAppButton from './components/FloatingWhatsAppButton'
 import Faqs from './faqs/Faqs'
+import ProductHighlight from './components/ProductHighlight'
+import GalleryV2 from './components/GalleryV2'
+import Title from './components/Title'
 
 
 export default function Home() {
@@ -27,12 +30,25 @@ export default function Home() {
       <Header />
 
       <Featured />
-      <Description1 />
+      <Title text='Our Flagship' />
+      <div className='mt-12'></div>
+      <ProductHighlight />
+      {/* <Description1 />
       <Description2 />
       <Description3 />
-      <Description4 />
+      <Description4 /> */}
+      <hr />
+      <div className='mb-24'></div>
+      <Title text='Gallery' />
+      <div className='mb-10'></div>
+      <GalleryV2 />
+      <div className='mt-12'></div>
+      <Title text="Enjoy the journey" />
+      <div className='mb-8'></div>
       <Gallery />
       <Faqs />
+      <div className='mt-24'></div>
+      <Title text="We Are Registered On" />
       <RegisteredOn />
       <AboutUs />
       <footer>

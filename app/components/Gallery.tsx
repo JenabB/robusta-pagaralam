@@ -34,7 +34,7 @@ const Gallery = () => {
 
     return (
         <div>
-            <div id="gallery" className='bg-white mt-4'>
+            {/* <div id="gallery" className='bg-white mt-4'>
                 <div className='p-3 pl-4 lg:p-8'>
                     <div className="flex overflow-x-scroll space-x-4">
                         {images.map((item, index) => <div key={index}>
@@ -45,13 +45,13 @@ const Gallery = () => {
                         )}
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div id="gallery" className='bg-white mt-2'>
 
                 <div className='p-3 pl-4 lg:p-8'>
-                    <div className='bg-black text-white p-2 uppercase font-bold mb-4'>
+                    {/* <div className='bg-black text-white p-2 uppercase font-bold mb-4'>
                         <h1>Our Agenda</h1>
-                    </div>
+                    </div> */}
                     {/* <div>
                         <select className='bg-black text-white p-2 px-4 mb-4 font-semibold'>
                             <option value='2024'>2024</option>

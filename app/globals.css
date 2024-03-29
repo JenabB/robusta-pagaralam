@@ -24,16 +24,12 @@ body {
 
 .font-caveat {
   font-family: 'Caveat', cursive;
-  font-optical-sizing: auto;
 }
 
 .font-edu {
   font-family: 'Edu NSW ACT Foundation', cursive;
-  font-optical-sizing: auto;
-  font-style: normal;
 }
 
 .font-pacifico {
   font-family: 'Pacifico', cursive;
-  font-style: normal;
 }

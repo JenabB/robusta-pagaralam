@@ -7,8 +7,6 @@ const RegisteredOn = () => {
 
     return (
         <div className='text-center my-10 lg:my-24'>
-            <h1 className='font-bold text-3xl'>We Are Registered On</h1>
-
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 mt-0 lg:mt-10'>
                 {registeredImage.map((image, index) =>
                     <div key={index} className='flex justify-center'>
