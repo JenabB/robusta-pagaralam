@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import tea from "@/app/data/tea.json"
-import formattedDollar from '../utils/formattedDollar'
-import SpecModal from './SpecModal'
+import formattedDollar from '../utils/formattedDollar';
+
 const ProductHighlight = () => {
     const [showDensity, setShowDensity] = useState(false)
     const [showComposition, setShowComposition] = useState(false);
