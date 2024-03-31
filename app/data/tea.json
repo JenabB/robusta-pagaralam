@@ -17,7 +17,20 @@
         "Soothes the heart and mind"
       ],
       "price": 30,
-      "shop_text": "Hello, i want to buy CTC Black Tea for"
+      "shop_text": "Hello, i want to buy CTC Black Tea for",
+      "specs": {
+        "standard_density": [
+          { "name": "BP 1", "norma": "300 -330" },
+          { "name": "PF 1", "norma": "250 - 295" },
+          { "name": "PD", "norma": "250 - 280" },
+          { "name": "D 1", "norma": "240 - 260" },
+          { "name": "FANN", "norma": "290 - 310" },
+          { "name": "D 2", "norma": "235 - 245" },
+          { "name": "FNGS", "norma": "295 - 320" },
+          { "name": "BMC", "norma": "350 - 380" }
+        ],
+        "composition": []
+      }
     },
     {
       "image": "/images/green-tea.jpeg",
@@ -36,7 +49,82 @@
         "Soothes the heart and mind"
       ],
       "price": 30,
-      "shop_text": "Hello, i want to buy Green Tea for"
+      "shop_text": "Hello, i want to buy Green Tea for",
+      "specs": {
+        "standard_density": [],
+        "composition": [
+          {
+            "type": "KR-1",
+            "comp": "FUNNEL 1 MIDLETONE",
+            "kg": "160",
+            "percen": "20",
+            "weight": "40 Kg/Krg"
+          },
+          {
+            "type": "KR-1",
+            "comp": "FUNNEL 2 MIDLETONE",
+            "kg": "640",
+            "percen": "80",
+            "weight": "40 Kg/Krg"
+          },
+          {
+            "type": "KR-2",
+            "comp": "FUNNEL 1 MIDLETONE",
+            "kg": "210",
+            "percen": "30",
+            "weight": "35 Kg/Krg"
+          },
+          {
+            "type": "KR-2",
+            "comp": "FUNNEL 2 MIDLETONE",
+            "kg": "420",
+            "percen": "60",
+            "weight": "35 Kg/Krg"
+          },
+          {
+            "type": "KR-2",
+            "comp": "FUNNEL 3 MIDLETONE",
+            "kg": "70",
+            "percen": "10",
+            "weight": "35 Kg/Krg"
+          },
+          {
+            "type": "KR-3",
+            "comp": "TEA BOLL POWDER",
+            "kg": "400",
+            "percen": "50",
+            "weight": "40 Kg/Krg"
+          },
+          {
+            "type": "KR-3",
+            "comp": "PERFORATION",
+            "kg": "128",
+            "percen": "16",
+            "weight": "40 Kg/Krg"
+          },
+          {
+            "type": "KR-3",
+            "comp": "SHIFTER POWDER",
+            "kg": "80",
+            "percen": "10",
+            "weight": "40 Kg/Krg"
+          },
+          {
+            "type": "KR-3",
+            "comp": "MIDLETONE ROUGH FUNNEL",
+            "kg": "128",
+            "percen": "16",
+            "weight": "40 Kg/Krg"
+          },
+          {
+            "type": "KR-3",
+            "comp": "DUST",
+            "kg": "64",
+            "percen": "8",
+            "weight": "40 Kg/Krg"
+          }
+        ]
+      }
     }
   ]
 }
