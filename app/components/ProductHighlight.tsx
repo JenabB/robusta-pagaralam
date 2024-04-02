@@ -29,13 +29,14 @@ const ProductHighlight = () => {
                                         {item.description}
                                     </p>
                                     <hr className='mt-4' />
-                                    {Boolean(item.specs.standard_density.length) && <p className='font-bold' onClick={() => setShowDensity(!showDensity)}><u>Show density</u></p>}
+                                    {Boolean(item.specs.standard_density.length) && <p className='font-bold' onClick={() => setShowDensity(!showDensity)}><u>Show density & Price</u></p>}
                                     {Boolean(item.specs.standard_density.length) && showDensity && <div>
                                         <table className='w-full'>
                                             <thead>
                                                 <tr className='font-bold text-center'>
                                                     <th className='px-4 py-2'>GRADE</th>
                                                     <th className='px-4 py-2'>NORMA</th>
+                                                    <th className='px-4 py-2'>PRICE (Dollar)</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -43,6 +44,7 @@ const ProductHighlight = () => {
                                                     <tr key={index} className='text-center'>
                                                         <td className='border px-4'>{item.name}</td>
                                                         <td className='border px-4 '>{item.norma}</td>
+                                                        <td className='border px-4 '>{item.price}</td>
                                                     </tr>
                                                 ))}
                                             </tbody>
@@ -76,9 +78,9 @@ const ProductHighlight = () => {
                                     {/* <p className='mt-4 font-semibold' onClick={() => setIsOpen(true)}><u>Check product specification</u></p>
                                     <SpecModal isOpen={isOpen} onClose={() => setIsOpen(false)} data={item.specs} /> */}
 
-                                    <div className='mt-4 font-bold'>
+                                    {/* <div className='mt-4 font-bold'>
                                         <p><span className='font-normal'>Price</span>: {formattedDollar(item.price)}</p>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 {/* <div className='p-8 bg-amber-100'>
                                 <p className='font-bold mb-2'>Effects and Benefits</p>
