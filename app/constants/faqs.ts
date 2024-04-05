@@ -40,9 +40,10 @@ const faqs = [
   {
     title: 'Shipping port',
     items: [
-      'Sumatra Area: Belawan Port, Talang Duku Port',
-      'Java Area: Tanjung Priok Port (Jakarta)',
-      'East Java, Bali, Eastern Indonesia: Tanjung Perak port (Surabaya)',
+      'Sumatra Area: Boom Baru Port, Palembang',
+      // 'Sumatra Area: Belawan Port, Talang Duku Port',
+      // 'Java Area: Tanjung Priok Port (Jakarta)',
+      // 'East Java, Bali, Eastern Indonesia: Tanjung Perak port (Surabaya)',
     ],
   },
 ];

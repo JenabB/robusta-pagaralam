@@ -20,14 +20,14 @@
       "shop_text": "Hello, i want to buy CTC Black Tea for",
       "specs": {
         "standard_density": [
-          { "name": "BP 1", "norma": "300 -330", "price": "2.01" },
-          { "name": "PF 1", "norma": "250 - 295", "price": "1.88" },
-          { "name": "PD", "norma": "250 - 280", "price": "1.76" },
-          { "name": "D 1", "norma": "240 - 260", "price": "1.63" },
-          { "name": "FANN", "norma": "290 - 310", "price": "1.5" },
-          { "name": "D 2", "norma": "235 - 245", "price": "1.38" },
-          { "name": "FNGS", "norma": "295 - 320", "price": "1.25" },
-          { "name": "BMC", "norma": "350 - 380", "price": "1.13" }
+          { "name": "BP 1", "price": "6.04" },
+          { "name": "PF 1", "price": "5.66" },
+          { "name": "PD", "price": "5.13" },
+          { "name": "D 1", "price": "4.91" },
+          { "name": "FANN", "price": "4.53" },
+          { "name": "D 2", "price": "4.12" },
+          { "name": "FNGS", "price": "3.77" },
+          { "name": "BMC", "price": "3.40" }
         ],
         "composition": []
       }
@@ -51,7 +51,11 @@
       "price": 30,
       "shop_text": "Hello, i want to buy Green Tea for",
       "specs": {
-        "standard_density": [],
+        "standard_density": [
+          { "name": "KR 1", "price": "4.91" },
+          { "name": "KR 2", "price": "4.53" },
+          { "name": "KR 3", "price": "4.12" }
+        ],
         "composition": [
           {
             "type": "KR-1",

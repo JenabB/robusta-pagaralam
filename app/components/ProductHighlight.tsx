@@ -35,7 +35,7 @@ const ProductHighlight = () => {
                                             <thead>
                                                 <tr className='font-bold text-center'>
                                                     <th className='px-4 py-2'>GRADE</th>
-                                                    <th className='px-4 py-2'>NORMA</th>
+
                                                     <th className='px-4 py-2'>PRICE (Dollar)</th>
                                                 </tr>
                                             </thead>
@@ -43,7 +43,7 @@ const ProductHighlight = () => {
                                                 {item.specs.standard_density.map((item, index) => (
                                                     <tr key={index} className='text-center'>
                                                         <td className='border px-4'>{item.name}</td>
-                                                        <td className='border px-4 '>{item.norma}</td>
+
                                                         <td className='border px-4 '>{item.price}</td>
                                                     </tr>
                                                 ))}

@@ -1,0 +1,10 @@
+{
+  "awards": [
+    { "image": "/images/award/award-1.webp", "title": "NAME" },
+    { "image": "/images/award/award-2.webp", "title": "NAME" }
+  ],
+  "certificaties": [
+    { "image": "/images/award/sertificate-1.webp", "title": "NAME" },
+    { "image": "/images/award/sertificate-2.webp", "title": "NAME" }
+  ]
+}
