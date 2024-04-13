@@ -6,17 +6,20 @@ const ProductHighlight = () => {
     const [showDensity, setShowDensity] = useState(false)
     const [showComposition, setShowComposition] = useState(false);
 
-    const handleWhatsAppClick = (text: string) => {
-        const whatsappUrl = 'https://api.whatsapp.com/send?phone=6287813120666';
+    const handleBuyNowClick = (product: string) => {
+        const phoneNumber = '6287813120666';
+        const message = `Hello Fazza! i want to order ${product}`;
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
         window.open(whatsappUrl, '_blank');
-    }
+    };
 
     return (
         <div>
             <div >
                 {tea.tea.map((item, index) => <div key={index}>
                     <div>
-
                         <div className='grid xs:grid-cols-1 lg:grid-cols-2'>
                             <div>
                                 <img src={item.image} />
@@ -29,7 +32,7 @@ const ProductHighlight = () => {
                                         {item.description}
                                     </p>
                                     <hr className='mt-4' />
-                                    {Boolean(item.specs.standard_density.length) && <p className='font-bold' onClick={() => setShowDensity(!showDensity)}><u>Show density & Price</u></p>}
+                                    {/* {Boolean(item.specs.standard_density.length) && <p className='font-bold' onClick={() => setShowDensity(!showDensity)}><u>Show density & Price</u></p>}
                                     {Boolean(item.specs.standard_density.length) && showDensity && <div>
                                         <table className='w-full'>
                                             <thead>
@@ -49,8 +52,8 @@ const ProductHighlight = () => {
                                                 ))}
                                             </tbody>
                                         </table>
-                                    </div>}
-                                    {Boolean(item.specs.composition.length) && <p className='font-bold' onClick={() => setShowComposition(!showComposition)}><u>Show composition</u></p>}
+                                    </div>} */}
+                                    {/* {Boolean(item.specs.composition.length) && <p className='font-bold' onClick={() => setShowComposition(!showComposition)}><u>Show composition</u></p>}
                                     {Boolean(item.specs.composition.length) && showComposition && <div>
                                         <table className='w-full'>
                                             <thead>
@@ -74,7 +77,7 @@ const ProductHighlight = () => {
                                                 ))}
                                             </tbody>
                                         </table>
-                                    </div>}
+                                    </div>} */}
                                     {/* <p className='mt-4 font-semibold' onClick={() => setIsOpen(true)}><u>Check product specification</u></p>
                                     <SpecModal isOpen={isOpen} onClose={() => setIsOpen(false)} data={item.specs} /> */}
 
@@ -89,13 +92,30 @@ const ProductHighlight = () => {
                                 </ul>
                             </div> */}
 
-                                <div>
+                                {/* <div>
                                     <div className='text-center mt-4 mb-14'>
                                         <button className='px-12 py-2 bg-black text-white rounded-full' onClick={() => handleWhatsAppClick(item.shop_text)}>SHOP NOW</button>
                                     </div>
-                                </div>
+                                </div> */}
 
                             </div>
+
+                        </div>
+                        <div className='space-x-4 text-center flex overflow-x-scroll px-4 mt-8' >
+                            {item.child.map((x, i) => <div key={i}>
+                                <div className='' style={{ width: '250px' }}>
+                                    <img src={x.image}
+                                        style={{ height: '200px', width: '250px', objectFit: 'cover' }}
+                                    />
+                                    <div className='flex justify-between items-center'>
+                                        <p className='p-2 font-poppins'>{x.name}</p>
+                                        <p className='text-teal-400 font-semibold'>{x.price}</p>
+                                    </div>
+                                    <div className='text-left mt-2 mb-10'>
+                                        <button className='px-4 py-2 bg-black text-white rounded-2xl font-bold text-xs' onClick={() => handleBuyNowClick(x.name)}>SHOP NOW</button>
+                                    </div>
+                                </div>
+                            </div>)}
                         </div>
                     </div>
                 </div>)
