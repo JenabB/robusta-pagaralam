@@ -1,6 +1,22 @@
-import React from 'react'
-import { styles } from './gridStyles'
+import React, { useEffect, useState } from 'react'
+import { styles, responsiveStyles } from './gridStyles';
+
 const FazzaGrid = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768); // Ganti nilai sesuai dengan breakpoint yang diinginkan
+        };
+
+        checkMobile();
+
+        window.addEventListener('resize', checkMobile);
+
+        return () => {
+            window.removeEventListener('resize', checkMobile);
+        };
+    }, []);
 
     const images = [
         '/images/grid/1.webp', '/images/grid/2.webp',
@@ -23,10 +39,10 @@ const FazzaGrid = () => {
     };
 
     return (
-        <div className='w-full'>
-            <div style={{ ...styles.pin_container }}>
+        <div className='w-full' style={{ display: isMobile ? 'none' : 'block' }}>
+            <div style={{ ...responsiveStyles.pin_container }}>
                 {images.map((im, idx) => <div key={idx} style={{
-                    ...styles.card, ...styles[randomSize()]
+                    ...responsiveStyles.card, ...responsiveStyles[randomSize()]
                 }}>
                     <img src={im} alt="grid" style={{ height: '100%', width: '100%', objectFit: 'cover' }} />
                 </div>)}
