@@ -1,11 +1,10 @@
 import React from 'react'
 import { InboxStackIcon, ChatBubbleLeftRightIcon, CheckBadgeIcon } from '@heroicons/react/24/solid';
+
 const Featured = () => {
-
-
     return (
-        <div className='my-6 lg:my-10 lg:mb-24 lg:w-4/5 mx-auto'>
-            <div className='grid grid-cols-1 lg:grid-cols-3 p-4 lg:p-14'>
+        <div className='lg:mb-14 lg:w-4/5 mx-auto'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 p-4 pt-0'>
                 <div className='flex flex-col justify-center text-center p-4'>
                     <InboxStackIcon className="h-16 text-amber-800 mb-4" />
                     <h3 className='font-bold text-xl mb-2'>Best Quality</h3>

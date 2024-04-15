@@ -19,6 +19,7 @@ import ProductHighlight from './components/ProductHighlight'
 import GalleryV2 from './components/GalleryV2'
 import Title from './components/Title'
 import AwardsandCertificates from './components/AwardsandCertificates'
+import FazzaGrid from './components/FazzaGrid'
 
 
 export default function Home() {
@@ -29,8 +30,8 @@ export default function Home() {
       <FloatingWhatsAppButton />
       <Navbar />
       <Header />
-
       <Featured />
+      <div className='mt-12'></div>
       <Title text='Our Flagship' />
       <div className='mt-12'></div>
       <ProductHighlight />
@@ -40,17 +41,17 @@ export default function Home() {
       <Description4 /> */}
 
       <div className='mb-24'></div>
-      <hr className='mb-14' />
-      <AwardsandCertificates />
-      <hr className='mb-14' />
-      <Title text='Gallery' />
 
-      <div className='mb-10'></div>
-      <GalleryV2 />
+      <AwardsandCertificates />
+      <FazzaGrid />
+      <hr className='mb-14' />
+      {/* <Title text='Gallery' /> */}
+
+      {/* <div className='mb-10'></div>
+      <GalleryV2 /> */}
       <div className='mt-12'></div>
 
-      <Title text="Enjoy the journey" />
-
+      <Title text="Enjoy our journey" />
       <div className='mb-8'></div>
       <Gallery />
       <hr className='mb-14' />

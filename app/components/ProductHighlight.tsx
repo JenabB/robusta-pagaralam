@@ -18,20 +18,21 @@ const ProductHighlight = () => {
     return (
         <div>
             <div >
+                <hr className='mb-4' />
                 {tea.tea.map((item, index) => <div key={index}>
                     <div>
                         <div className='grid xs:grid-cols-1 lg:grid-cols-2'>
                             <div>
-                                <img src={item.image} />
+                                {/* <img src={item.image} style={{ height: '200px' }} /> */}
                             </div>
                             <div className=''>
-                                <hr className='mb-4' />
+
                                 <div className='p-8 pt-0'>
                                     <h1 className='font-bold text-xl uppercase font-sans'>{item.name}</h1>
                                     <p className='mt-4 font-edu text-xl'>
                                         {item.description}
                                     </p>
-                                    <hr className='mt-4' />
+
                                     {/* {Boolean(item.specs.standard_density.length) && <p className='font-bold' onClick={() => setShowDensity(!showDensity)}><u>Show density & Price</u></p>}
                                     {Boolean(item.specs.standard_density.length) && showDensity && <div>
                                         <table className='w-full'>
