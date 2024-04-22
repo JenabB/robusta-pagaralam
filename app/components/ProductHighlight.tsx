@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
-import tea from "@/app/data/tea.json"
-import formattedDollar from '../utils/formattedDollar';
+import React from 'react';
+import tea from '@/app/data/tea.json';
 
 const ProductHighlight = () => {
-    const [showDensity, setShowDensity] = useState(false)
-    const [showComposition, setShowComposition] = useState(false);
+
 
     const handleBuyNowClick = (product: string) => {
         const phoneNumber = '6287813120666';
@@ -17,113 +15,67 @@ const ProductHighlight = () => {
 
     return (
         <div>
-            <div >
-                <hr className='mb-4' />
-                {tea.tea.map((item, index) => <div key={index}>
-                    <div>
-                        <div className='grid xs:grid-cols-1 lg:grid-cols-2'>
-                            <div>
-                                {/* <img src={item.image} style={{ height: '200px' }} /> */}
-                            </div>
-                            <div className=''>
-
-                                <div className='p-8 pt-0'>
-                                    <h1 className='font-bold text-xl uppercase font-sans'>{item.name}</h1>
-                                    <p className='mt-4 font-edu text-xl'>
-                                        {item.description}
-                                    </p>
-
-                                    {/* {Boolean(item.specs.standard_density.length) && <p className='font-bold' onClick={() => setShowDensity(!showDensity)}><u>Show density & Price</u></p>}
-                                    {Boolean(item.specs.standard_density.length) && showDensity && <div>
-                                        <table className='w-full'>
-                                            <thead>
-                                                <tr className='font-bold text-center'>
-                                                    <th className='px-4 py-2'>GRADE</th>
-
-                                                    <th className='px-4 py-2'>PRICE (Dollar)</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {item.specs.standard_density.map((item, index) => (
-                                                    <tr key={index} className='text-center'>
-                                                        <td className='border px-4'>{item.name}</td>
-
-                                                        <td className='border px-4 '>{item.price}</td>
-                                                    </tr>
-                                                ))}
-                                            </tbody>
-                                        </table>
-                                    </div>} */}
-                                    {/* {Boolean(item.specs.composition.length) && <p className='font-bold' onClick={() => setShowComposition(!showComposition)}><u>Show composition</u></p>}
-                                    {Boolean(item.specs.composition.length) && showComposition && <div>
-                                        <table className='w-full'>
-                                            <thead>
-                                                <tr className='font-bold text-center'>
-                                                    <th className='px-4'>TYPE</th>
-                                                    <th className='px-4'>COMPOSITION</th>
-                                                    <th className='px-4'>KG</th>
-                                                    <th className='px-4'>%</th>
-                                                    <th className='px-4'>WEIGHT</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {item.specs.composition.map((item, index) => (
-                                                    <tr key={index} className='text-center'>
-                                                        <td className='border px-4'>{item.type}</td>
-                                                        <td className='border px-4 '>{item.comp}</td>
-                                                        <td className='border px-4'>{item.kg}</td>
-                                                        <td className='border px-4 '>{item.percen}</td>
-                                                        <td className='border px-4'>{item.weight}</td>
-                                                    </tr>
-                                                ))}
-                                            </tbody>
-                                        </table>
-                                    </div>} */}
-                                    {/* <p className='mt-4 font-semibold' onClick={() => setIsOpen(true)}><u>Check product specification</u></p>
-                                    <SpecModal isOpen={isOpen} onClose={() => setIsOpen(false)} data={item.specs} /> */}
-
-                                    {/* <div className='mt-4 font-bold'>
-                                        <p><span className='font-normal'>Price</span>: {formattedDollar(item.price)}</p>
-                                    </div> */}
-                                </div>
-                                {/* <div className='p-8 bg-amber-100'>
-                                <p className='font-bold mb-2'>Effects and Benefits</p>
-                                <ul>
-                                    {item.benefits.map((b, idx) => <li key={idx} className='font-edu text-xl'><b>{idx + 1}.</b> {b}</li>)}
-                                </ul>
-                            </div> */}
-
-                                {/* <div>
-                                    <div className='text-center mt-4 mb-14'>
-                                        <button className='px-12 py-2 bg-black text-white rounded-full' onClick={() => handleWhatsAppClick(item.shop_text)}>SHOP NOW</button>
-                                    </div>
-                                </div> */}
-
-                            </div>
-
-                        </div>
-                        <div className='space-x-4 text-center flex overflow-x-scroll px-4 mt-8' >
-                            {item.child.map((x, i) => <div key={i}>
-                                <div className='' style={{ width: '250px' }}>
-                                    <img src={x.image}
-                                        style={{ height: '200px', width: '250px', objectFit: 'cover' }}
-                                    />
-                                    <div className='flex justify-between items-center'>
-                                        <p className='p-2 font-poppins'>{x.name}</p>
-                                        <p className='text-teal-400 font-semibold'>{x.price}</p>
-                                    </div>
-                                    <div className='text-left mt-2 mb-10'>
-                                        <button className='px-4 py-2 bg-black text-white rounded-2xl font-bold text-xs' onClick={() => handleBuyNowClick(x.name)}>SHOP NOW</button>
+            <div>
+                <hr className="mb-4" />
+                {tea.tea.map((item, index) => (
+                    <div key={index}>
+                        <div>
+                            <div className="mb-10">
+                                <div className="">
+                                    <div className="p-8 pt-0">
+                                        <h1 className="font-bold text-xl uppercase font-sans">
+                                            {item.name}
+                                        </h1>
+                                        <p className="mt-4 font-edu text-xl">{item.description}</p>
                                     </div>
                                 </div>
-                            </div>)}
+                                <div>
+                                    <div className="space-x-4 text-center flex overflow-x-scroll px-4 mt-8">
+                                        {item.child.map((x, i) => (
+                                            <div key={i}>
+                                                <div
+                                                    className="shadow-xl rounded-b-md"
+                                                    style={{ width: '250px' }}
+                                                >
+                                                    <img
+                                                        className="rounded-t-lg"
+                                                        src={x.image}
+                                                        style={{
+                                                            height: '200px',
+                                                            width: '250px',
+                                                            objectFit: 'cover',
+                                                        }}
+                                                    />
+                                                    <div className="px-2 pb-2 bg-slate-100">
+                                                        <div className="flex justify-between items-center">
+                                                            <p className="p-2 font-poppins font-bold text-sm">
+                                                                {x.name}
+                                                            </p>
+                                                            <p className="text-orange-500 font-semibold text-sm">
+                                                                {x.price}
+                                                            </p>
+                                                        </div>
+                                                        <div className="text-left mt-2">
+                                                            <button
+                                                                className="px-4 py-2 bg-black text-white rounded-2xl font-bold text-xs"
+                                                                onClick={() => handleBuyNowClick(x.name)}
+                                                            >
+                                                                SHOP NOW
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>)
-                }
-            </div >
-        </div >
-    )
-}
+                ))}
+            </div>
+        </div>
+    );
+};
 
-export default ProductHighlight
+export default ProductHighlight;
