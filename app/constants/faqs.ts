@@ -21,8 +21,8 @@ const faqs = [
   {
     title: 'Order term',
     items: [
-      'Full Container Load (FCL) 1 x 20‘ : 18 MT',
-      'Full Container Load (FCL) 1 x 40‘ : 26 MT',
+      'Full Container Load (FCL) 1 x 20 : 5-6 MT',
+      'Full Container Load (FCL) 1 x 40 : 10-13 MT',
     ],
   },
   {
