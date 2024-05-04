@@ -20,6 +20,7 @@ import GalleryV2 from './components/GalleryV2'
 import Title from './components/Title'
 import AwardsandCertificates from './components/AwardsandCertificates'
 import FazzaGrid from './components/FazzaGrid'
+import ShippingPort from './components/ShippingPort'
 
 
 export default function Home() {
@@ -54,6 +55,8 @@ export default function Home() {
       <Title text="Enjoy our journey" />
       <div className='mb-8'></div>
       <Gallery />
+      <hr />
+      <ShippingPort />
       <hr className='mb-14' />
       <Faqs />
       <div className='mt-24'></div>
