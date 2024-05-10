@@ -17,9 +17,9 @@ const AboutUs = () => {
 
 
     return (
-        <div id='about-us'>
+        <div id='about-us' style={{ backgroundColor: '#AA9F83' }}>
 
-            <div className='grid grid-flow-row-dense grid-cols-1 lg:grid-cols-3'>
+            <div className=''>
                 <div className='bg-black text-white p-3 lg:p-8 col-span-2'>
                     <p className='mb-4 p-3 text-justify'>
                         <b> PT Fazza Indo Omaira</b> strives to run its business sustainably
@@ -40,7 +40,7 @@ const AboutUs = () => {
                     </p> */}
 
                 </div>
-                <div className='p-4 lg:p-8'>
+                <div className='p-4 lg:p-8 grid lg:grid-cols-2'>
                     {companyInfo.map((item, index) =>
                         <div key={index} >
                             <div className='mb-4'>

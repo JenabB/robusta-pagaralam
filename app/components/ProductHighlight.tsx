@@ -14,7 +14,7 @@ const ProductHighlight = () => {
     };
 
     return (
-        <div>
+        <div style={{ backgroundColor: '#FEFAEF' }}>
             <div>
                 <hr className="mb-4" />
                 <div className='lg:grid lg:grid-cols-2'>
@@ -22,7 +22,7 @@ const ProductHighlight = () => {
                         <div key={index}>
                             <div className="p-4 mb-10">
                                 <div className=" pt-0">
-                                    <h1 className="font-bold text-xl uppercase font-poppins">
+                                    <h1 className="font-bold text-xl text-center uppercase font-poppins">
                                         {item.name}
                                     </h1>
                                     <p className="mt-4 font-poppins text-sm">{item.description}</p>
