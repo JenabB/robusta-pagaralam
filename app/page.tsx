@@ -21,27 +21,24 @@ import Title from './components/Title'
 import AwardsandCertificates from './components/AwardsandCertificates'
 import FazzaGrid from './components/FazzaGrid'
 import ShippingPort from './components/ShippingPort'
+import RibbonText from './components/RibbonText'
 
 
 export default function Home() {
   return (
     <main
     >
-
+      <RibbonText />
       <FloatingWhatsAppButton />
       <Navbar />
       <Header />
-      <Featured />
-      <div className='mt-12'></div>
-      <Title text='Our Flagship' />
-      <div className='mt-12'></div>
+      {/* <Featured /> */}
+
       <ProductHighlight />
       {/* <Description1 />
       <Description2 />
       <Description3 />
       <Description4 /> */}
-
-      <div className='mb-24'></div>
 
       <AwardsandCertificates />
       <FazzaGrid />

@@ -22,10 +22,10 @@ const ProductHighlight = () => {
                         <div key={index}>
                             <div className="p-4 mb-10">
                                 <div className=" pt-0">
-                                    <h1 className="font-bold text-xl uppercase font-sans">
+                                    <h1 className="font-bold text-xl uppercase font-poppins">
                                         {item.name}
                                     </h1>
-                                    <p className="mt-4 font-edu text-lg">{item.description}</p>
+                                    <p className="mt-4 font-poppins text-sm">{item.description}</p>
                                 </div>
                                 <div className="space-x-4 text-center flex overflow-x-scroll px-4 mt-8">
                                     {item.child.map((x, i) => (
@@ -48,18 +48,14 @@ const ProductHighlight = () => {
                                                         <p className="p-2 font-poppins font-bold text-sm">
                                                             {x.name}
                                                         </p>
-                                                        <p className="text-orange-500 font-semibold text-sm">
-                                                            {x.price}
-                                                        </p>
-                                                    </div>
-                                                    <div className="text-left mt-2">
                                                         <button
-                                                            className="px-4 py-2 bg-black text-white rounded-2xl font-bold text-xs"
+                                                            className="px-4 mt-2 py-2 bg-black text-white rounded-2xl font-bold text-xs"
                                                             onClick={() => handleBuyNowClick(x.name)}
                                                         >
-                                                            SHOP NOW
+                                                            CHAT NOW
                                                         </button>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>

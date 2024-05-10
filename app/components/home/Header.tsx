@@ -35,8 +35,20 @@ const Header = () => {
     }
 
     return (
-        <div style={style}>
-            <div
+        <div >
+            <div className='text-white text-center px-4 py-32' style={{
+                backgroundColor: '#545C36',
+                backgroundImage: 'url(/images/header.webp)',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                filter: 'grayscale(60%)',
+            }}>
+                <h1 className='text-4xl font-poppins'>FAZZA INDO OMAIRA</h1>
+                <p className='mt-4 lg:w-1/2 text-center mx-auto px-4 font-poppins'>
+                    Strives to run its business sustainably As an international trading company, our company is run by expertise.
+                </p>
+            </div>
+            {/* <div
                 style={{
                     backgroundImage: `url(/images/containers.webp)`,
                     backgroundSize: 'cover',
@@ -52,7 +64,7 @@ const Header = () => {
                 <div className='bg-white px-2 lg:px-10 m-4 py-2'>
                     <Image src="/images/logo-long.webp" width={isMobile ? 350 : 500} height={200} alt='main banner' />
                 </div>
-            </div>
+            </div> */}
         </div>
 
     );

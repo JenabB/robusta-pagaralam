@@ -13,7 +13,7 @@ const NavbarMobile = () => {
     };
 
     return (
-        <nav className="bg-black p-4 sticky top-0 z-50">
+        <nav className="p-4 sticky top-0 z-50" style={{ backgroundColor: '#545C36' }}>
             <div className="flex items-center justify-between">
                 <button onClick={toggleMobileMenu} className="lg:hidden text-white focus:outline-none">
                     <Bars3Icon className="w-6 h-6" />
@@ -31,7 +31,7 @@ const NavbarMobile = () => {
             </div>
 
             {mobileMenuOpen && (
-                <div className={` w-8/12 w-lg:hidden fixed inset-0 bg-black transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+                <div style={{ backgroundColor: '#545C36' }} className={` w-8/12 w-lg:hidden fixed inset-0  transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                     <div className="flex justify-end p-4">
                         <button onClick={toggleMobileMenu} className="text-white focus:outline-none">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

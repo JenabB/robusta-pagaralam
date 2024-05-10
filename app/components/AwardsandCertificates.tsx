@@ -4,7 +4,7 @@ import Title from './Title';
 
 const AwardsandCertificates = () => {
     return (
-        <div className=' bg-slate-100 pt-10 pb-2'>
+        <div className=' bg-slate-100 pt-10'>
             <Title text='Certificaties & Awards' />
             <div className='grid grid-cols-1 lg:flex justify-center mt-20 lg:space-x-10 lg:px-10'>
                 {awards.awards.map((item, index) => <div key={index} className='mb-10'>

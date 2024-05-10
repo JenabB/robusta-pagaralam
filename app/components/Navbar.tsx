@@ -12,7 +12,9 @@ const Navbar = () => {
     }
 
     return (
-        <div className='sticky top-0 z-50 flex justify-between items-center p-5 bg-black text-white font-semibold'>
+        <div className='sticky top-0 z-50 flex justify-between items-center p-5 text-white font-semibold' style={{
+            backgroundColor: '#545C36'
+        }}>
             <div>
                 <a href='/'>
                     <Image
