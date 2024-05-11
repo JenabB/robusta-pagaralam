@@ -22,6 +22,7 @@ import AwardsandCertificates from './components/AwardsandCertificates'
 import FazzaGrid from './components/FazzaGrid'
 import ShippingPort from './components/ShippingPort'
 import RibbonText from './components/RibbonText'
+import Payment from './components/Payment'
 
 
 export default function Home() {
@@ -39,7 +40,7 @@ export default function Home() {
       <Description2 />
       <Description3 />
       <Description4 /> */}
-
+      <Payment />
       <AwardsandCertificates />
       <FazzaGrid />
       <hr className='mb-14' />
@@ -60,9 +61,7 @@ export default function Home() {
       <Title text="We Are Registered On" />
       <RegisteredOn />
       <AboutUs />
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
 
     </main>
   )

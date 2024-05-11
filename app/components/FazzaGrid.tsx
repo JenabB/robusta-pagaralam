@@ -43,7 +43,7 @@ const FazzaGrid = () => {
 
     return (
         <div className='py-4' style={{ backgroundColor: '#FEFAEF' }}>
-            <div className='grid grid-cols-3 w-1/2 mx-auto'>
+            <div className='grid grid-cols-2 lg:grid-cols-3 lg:w-1/2 mx-auto'>
                 {images.map((item, index) => <div key={index} className='m-1'><img src={item} style={{ height: '200px', width: '100%', objectFit: 'cover' }} /></div>)}
             </div>
         </div>
