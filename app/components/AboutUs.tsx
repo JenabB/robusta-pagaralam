@@ -40,7 +40,7 @@ const AboutUs = () => {
                     </p> */}
 
                 </div>
-                <div className='p-4 lg:p-8 grid lg:grid-cols-2'>
+                <div className='p-4 lg:p-8 grid lg:grid-cols-2 text-white'>
                     {companyInfo.map((item, index) =>
                         <div key={index} >
                             <div className='mb-4'>

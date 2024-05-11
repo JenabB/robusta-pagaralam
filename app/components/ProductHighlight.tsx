@@ -34,14 +34,14 @@ const ProductHighlight = () => {
                                                 className="shadow-xl"
                                                 style={{ width: '250px' }}
                                             >
-                                                <div style={{ position: 'relative', width: '250px', height: '200px' }}>
-                                                    <p style={{ bottom: 0, left: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.4))', }} className='m-0 text-white w-full absolute'>{x.name}</p>
+                                                <div style={{ position: 'relative', width: '250px', height: '180px' }}>
+                                                    <p style={{ bottom: 0, left: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.4))', }} className='m-0 pb-2 text-white w-full absolute font-semibold'>{x.name}</p>
                                                     <img
-
+                                                        className='rounded-t-xl'
                                                         src={x.image}
                                                         style={{
                                                             width: '100%',
-                                                            height: '100%',
+                                                            height: '180px',
                                                             objectFit: 'cover',
                                                         }}
                                                         alt={x.name}
@@ -53,7 +53,7 @@ const ProductHighlight = () => {
 
                                                         <button
                                                             style={{ backgroundColor: '#545C36' }}
-                                                            className="px-4 w-full py-3 text-white font-bold text-xs"
+                                                            className="px-4 w-full py-3 text-white font-bold text-xs rounded-b-xl"
                                                             onClick={() => handleBuyNowClick(x.name)}
                                                         >
                                                             CHAT NOW

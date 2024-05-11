@@ -12,7 +12,7 @@ const RibbonText = () => {
     };
 
     const data = [
-        'Green Tea starting from $10.14', 'CTC Black Tea starting from $4.63', 'Negotible local shipping! E-mail us for orders'
+        'Green Tea starting from $10.14 for Canada', 'CTC Black Tea starting from $4.63 for Canada', 'Negotible local shipping! E-mail us for orders'
     ];
 
     return (
