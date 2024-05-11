@@ -42,28 +42,33 @@ const FazzaGrid = () => {
     };
 
     return (
-        <div
-            className="w-full"
-            style={{ display: isMobile ? 'none' : 'block' }}
-        >
-            <div style={{ ...responsiveStyles.pin_container }}>
-                {images.map((im, idx) => (
-                    <div
-                        key={idx}
-                        style={{
-                            ...responsiveStyles.card,
-                            ...responsiveStyles[randomSize()],
-                        }}
-                    >
-                        <img
-                            src={im}
-                            alt="grid"
-                            style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-                        />
-                    </div>
-                ))}
+        <div className='py-4' style={{ backgroundColor: '#FEFAEF' }}>
+            <div className='grid grid-cols-3 w-1/2 mx-auto'>
+                {images.map((item, index) => <div key={index} className='m-1'><img src={item} style={{ height: '200px', width: '100%', objectFit: 'cover' }} /></div>)}
             </div>
         </div>
+        // <div
+        //     className="w-full"
+        //     style={{ display: isMobile ? 'none' : 'block' }}
+        // >
+        //     <div style={{ ...responsiveStyles.pin_container }}>
+        //         {images.map((im, idx) => (
+        //             <div
+        //                 key={idx}
+        //                 style={{
+        //                     ...responsiveStyles.card,
+        //                     ...responsiveStyles[randomSize()],
+        //                 }}
+        //             >
+        //                 <img
+        //                     src={im}
+        //                     alt="grid"
+        //                     style={{ height: '100%', width: '100%', objectFit: 'cover' }}
+        //                 />
+        //             </div>
+        //         ))}
+        //     </div>
+        // </div>
     );
 };
 

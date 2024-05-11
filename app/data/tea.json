@@ -100,16 +100,22 @@
       "child": [
         {
           "name": "KR 1",
+          "category": "tea",
+          "sub-category": "Green Tea",
           "image": "/images/green-tea/KR1.webp",
           "price": "$3.66"
         },
         {
           "name": "KR 2",
+          "category": "tea",
+          "sub-category": "Green Tea",
           "image": "/images/green-tea/KR1.webp",
           "price": "$3.41"
         },
         {
           "name": "KR 3",
+          "category": "tea",
+          "sub-category": "Green Tea",
           "image": "/images/green-tea/KR1.webp",
           "price": "$3.12"
         }
@@ -148,16 +154,48 @@
         "composition": []
       },
       "child": [
-        { "name": "BP1", "image": "/images/ctc/BP1.webp", "price": "$4.48" },
-        { "name": "PF1", "image": "/images/ctc/PF1.webp", "price": "$4.20" },
-        { "name": "DUST1", "image": "/images/ctc/D1.webp", "price": "$3.92" },
-        { "name": "FANN", "image": "/images/ctc/FANN.webp", "price": "$3.65" },
+        {
+          "name": "BP1",
+          "category": "tea",
+          "sub-category": "CTC Black Tea",
+          "image": "/images/ctc/BP1.webp",
+          "price": "$4.48"
+        },
+        {
+          "name": "PF1",
+          "category": "tea",
+          "sub-category": "CTC Black Tea",
+          "image": "/images/ctc/PF1.webp",
+          "price": "$4.20"
+        },
+        {
+          "name": "DUST1",
+          "category": "tea",
+          "sub-category": "CTC Black Tea",
+          "image": "/images/ctc/D1.webp",
+          "price": "$3.92"
+        },
+        {
+          "name": "FANN",
+          "category": "tea",
+          "sub-category": "CTC Black Tea",
+          "image": "/images/ctc/FANN.webp",
+          "price": "$3.65"
+        },
         {
           "name": "FANN2",
+          "category": "tea",
+          "sub-category": "CTC Black Tea",
           "image": "/images/ctc/FANN2.webp",
           "price": "$3.39"
         },
-        { "name": "DUST2", "image": "/images/ctc/DUST2.webp", "price": "$3.10" }
+        {
+          "name": "DUST2",
+          "category": "tea",
+          "sub-category": "CTC Black Tea",
+          "image": "/images/ctc/DUST2.webp",
+          "price": "$3.10"
+        }
       ]
     }
   ]
