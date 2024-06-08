@@ -43,6 +43,7 @@ const ProductHighlight = () => {
                                                 className="shadow-xl"
                                                 style={{ width: '250px' }}
                                             >
+
                                                 <Slider {...settings}>
                                                     {x.images.map((content, index) => {
                                                         return (
@@ -59,26 +60,14 @@ const ProductHighlight = () => {
                                                         );
                                                     })}
                                                 </Slider>
-                                                {/* <div style={{ position: 'relative', width: '250px', height: '180px' }}>
-                                                    <p style={{ bottom: 0, left: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.4))', }} className='m-0 pb-2 text-white w-full absolute font-semibold'>{x.name}</p>
-                                                    <img
-                                                        className='rounded-t-xl'
-                                                        src={x.image}
-                                                        style={{
-                                                            width: '100%',
-                                                            height: '180px',
-                                                            objectFit: 'cover',
-                                                        }}
-                                                        alt={x.name}
-                                                    />
-                                                </div> */}
-                                                <div className=" bg-slate-100">
+
+                                                <div className='px-4'>
 
                                                     <div className="flex justify-between items-center">
-
+                                                        <p className='font-bold text-md' style={{ color: '#545C36' }}>{x.name}</p>
                                                         <button
                                                             style={{ backgroundColor: '#545C36' }}
-                                                            className="px-4 w-full py-3 text-white font-bold text-xs rounded-b-xl"
+                                                            className="px-4 py-2 w-1/2 text-white font-bold text-xs rounded-2xl"
                                                             onClick={() => handleBuyNowClick(x.name)}
                                                         >
                                                             CHAT NOW
