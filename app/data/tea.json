@@ -102,21 +102,33 @@
           "name": "KR 1",
           "category": "tea",
           "sub-category": "Green Tea",
-          "image": "/images/green-tea/KR1.webp",
+          "images": [
+            "/images/green-tea/KR2/1.webp",
+            "/images/green-tea/KR2/2.webp",
+            "/images/green-tea/KR2/3.webp"
+          ],
           "price": "$3.66"
         },
         {
           "name": "KR 2",
           "category": "tea",
           "sub-category": "Green Tea",
-          "image": "/images/green-tea/KR1.webp",
+          "images": [
+            "/images/green-tea/KR2/1.webp",
+            "/images/green-tea/KR2/2.webp",
+            "/images/green-tea/KR2/3.webp"
+          ],
           "price": "$3.41"
         },
         {
           "name": "KR 3",
           "category": "tea",
           "sub-category": "Green Tea",
-          "image": "/images/green-tea/KR1.webp",
+          "images": [
+            "/images/green-tea/KR3/1.webp",
+            "/images/green-tea/KR3/2.webp",
+            "/images/green-tea/KR3/3.webp"
+          ],
           "price": "$3.12"
         }
       ]
@@ -158,42 +170,66 @@
           "name": "BP1",
           "category": "tea",
           "sub-category": "CTC Black Tea",
-          "image": "/images/ctc/BP1.webp",
+          "images": [
+            "/images/ctc/BP1/1.webp",
+            "/images/ctc/BP1/2.webp",
+            "/images/ctc/BP1/3.webp"
+          ],
           "price": "$4.48"
         },
         {
           "name": "PF1",
           "category": "tea",
           "sub-category": "CTC Black Tea",
-          "image": "/images/ctc/PF1.webp",
+          "images": [
+            "/images/ctc/PF1/1.webp",
+            "/images/ctc/PF1/2.webp",
+            "/images/ctc/PF1/3.webp"
+          ],
           "price": "$4.20"
         },
         {
           "name": "DUST1",
           "category": "tea",
           "sub-category": "CTC Black Tea",
-          "image": "/images/ctc/D1.webp",
+          "images": [
+            "/images/ctc/DUST1/1.webp",
+            "/images/ctc/DUST1/2.webp",
+            "/images/ctc/DUST1/3.webp"
+          ],
           "price": "$3.92"
         },
         {
           "name": "FANN",
           "category": "tea",
           "sub-category": "CTC Black Tea",
-          "image": "/images/ctc/FANN.webp",
+          "images": [
+            "/images/ctc/FANN/1.webp",
+            "/images/ctc/FANN/2.webp",
+            "/images/ctc/FANN/3.webp"
+          ],
           "price": "$3.65"
         },
         {
           "name": "FANN2",
           "category": "tea",
           "sub-category": "CTC Black Tea",
-          "image": "/images/ctc/FANN2.webp",
+          "images": [
+            "/images/ctc/FANN2/1.webp",
+            "/images/ctc/FANN2/2.webp",
+            "/images/ctc/FANN2/3.webp"
+          ],
           "price": "$3.39"
         },
         {
           "name": "DUST2",
           "category": "tea",
           "sub-category": "CTC Black Tea",
-          "image": "/images/ctc/DUST2.webp",
+          "images": [
+            "/images/ctc/DUST2/1.webp",
+            "/images/ctc/DUST2/2.webp",
+            "/images/ctc/DUST2/3.webp"
+          ],
           "price": "$3.10"
         }
       ]

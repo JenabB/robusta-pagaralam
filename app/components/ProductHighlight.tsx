@@ -1,8 +1,17 @@
 import React from 'react';
 import tea from '@/app/data/tea.json';
+import Slider from 'react-slick';
 
 const ProductHighlight = () => {
 
+    const settings = {
+        dots: false,
+        infinite: true,
+        arrows: false,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 800,
+    };
 
     const handleBuyNowClick = (product: string) => {
         const phoneNumber = '6287813120666';
@@ -34,7 +43,23 @@ const ProductHighlight = () => {
                                                 className="shadow-xl"
                                                 style={{ width: '250px' }}
                                             >
-                                                <div style={{ position: 'relative', width: '250px', height: '180px' }}>
+                                                <Slider {...settings}>
+                                                    {x.images.map((content, index) => {
+                                                        return (
+                                                            <div
+                                                                key={index}
+
+                                                            >
+                                                                <img style={{
+                                                                    width: '100%',
+                                                                    height: '220px',
+                                                                    objectFit: 'cover',
+                                                                }} src={content} />
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </Slider>
+                                                {/* <div style={{ position: 'relative', width: '250px', height: '180px' }}>
                                                     <p style={{ bottom: 0, left: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.4))', }} className='m-0 pb-2 text-white w-full absolute font-semibold'>{x.name}</p>
                                                     <img
                                                         className='rounded-t-xl'
@@ -46,7 +71,7 @@ const ProductHighlight = () => {
                                                         }}
                                                         alt={x.name}
                                                     />
-                                                </div>
+                                                </div> */}
                                                 <div className=" bg-slate-100">
 
                                                     <div className="flex justify-between items-center">
