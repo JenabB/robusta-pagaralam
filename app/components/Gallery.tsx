@@ -12,9 +12,12 @@ const Gallery = () => {
     ]
 
     const imagesWithText = [
-        { image: '/images/gallery/march-2024.webp', year: '2024', month: 'March', date: '17', description: 'Initate meeting with the Pagaralam Coffee Activist Community regarding supplier cooperation.' },
+        { image: '/images/gallery/9-december-2024.webp', year: '2024', month: 'December', date: '9', description: `attend local exporters' meetings to exchange knowledge.` },
+        { image: '/images/gallery/14-april-2024.webp', year: '2024', month: 'April', date: '14', description: 'Visiting to tea product supplier factory.' },
         { image: '/images/gallery/march-2-2024.webp', year: '2024', month: 'March', date: '26', description: 'Chat to recognize the potential of local tea and cooperation in export with PTPN7.' },
-        { image: '/images/gallery/14-april-2024.webp', year: '2024', month: 'April', date: '14', description: 'Visiting to tea product supplier factory.' }
+        { image: '/images/gallery/march-2024.webp', year: '2024', month: 'March', date: '17', description: 'Initate meeting with the Pagaralam Coffee Activist Community regarding supplier cooperation.' },
+
+
     ]
 
     const [isMobile, setIsMobile] = useState(false);
