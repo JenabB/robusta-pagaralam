@@ -14,7 +14,7 @@ const ProductHighlight = () => {
     };
 
     const handleBuyNowClick = (product: string) => {
-        const phoneNumber = '6287813120666';
+        const phoneNumber = '6285368885884';
         const message = `Hello Fazza! i want to order ${product}`;
         const encodedMessage = encodeURIComponent(message);
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;

@@ -6,7 +6,7 @@ import useScreenSize from '../hooks/useScreenSize';
 const WhatsAppButton = () => {
     const { category } = useScreenSize()
     const handleWhatsAppClick = () => {
-        const whatsappUrl = 'https://api.whatsapp.com/send?phone=6287813120666';
+        const whatsappUrl = 'https://api.whatsapp.com/send?phone=6285368885884';
         window.open(whatsappUrl, '_blank');
     };
 
