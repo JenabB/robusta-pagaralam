@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import tea from '@/app/data/tea.json';
 import Slider from 'react-slick';
+import ImageDetails from './ImageDetails';
 
 const ProductHighlight = () => {
+    const [open, setOpen] = useState<boolean>(false);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const settings = {
         dots: false,
@@ -49,7 +52,10 @@ const ProductHighlight = () => {
                                                         return (
                                                             <div
                                                                 key={index}
-
+                                                                onClick={() => {
+                                                                    setOpen(true);
+                                                                    setSelectedImage(content)
+                                                                }}
                                                             >
                                                                 <img style={{
                                                                     width: '100%',
@@ -84,6 +90,10 @@ const ProductHighlight = () => {
                     ))}
                 </div>
             </div>
+            <ImageDetails image={selectedImage} open={open} onClose={() => {
+                setOpen(false)
+                setSelectedImage(null)
+            }} />
         </div>
     );
 };

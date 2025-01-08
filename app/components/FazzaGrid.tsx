@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { styles, responsiveStyles } from './gridStyles';
+import ImageDetails from './ImageDetails';
 
 const FazzaGrid = () => {
     const [isMobile, setIsMobile] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     useEffect(() => {
         const checkMobile = () => {
@@ -27,6 +30,8 @@ const FazzaGrid = () => {
         '/images/grid/6.webp',
         '/images/grid/7.webp',
         '/images/grid/8.webp',
+        "/images/grid/9.webp",
+        '/images/grid/10.webp'
     ];
 
     const randomSize = () => {
@@ -42,33 +47,21 @@ const FazzaGrid = () => {
     };
 
     return (
-        <div className='py-4' style={{ backgroundColor: '#FEFAEF' }}>
-            <div className='grid grid-cols-2 lg:grid-cols-3 lg:w-1/2 mx-auto'>
-                {images.map((item, index) => <div key={index} className='m-1'><img src={item} style={{ height: '200px', width: '100%', objectFit: 'cover' }} /></div>)}
+        <div>
+            <div className='py-4' style={{ backgroundColor: '#FEFAEF' }}>
+                <div className='grid grid-cols-2 lg:grid-cols-4 lg:w-2/3 mx-auto'>
+                    {images.map((item, index) => <div key={index} className='m-1' onClick={() => {
+                        setOpen(true);
+                        setSelectedImage(item);
+                    }}>
+                        <img src={item} style={{ height: '200px', width: '100%', objectFit: 'cover' }} /></div>)}
+                </div>
             </div>
+            <ImageDetails image={selectedImage} open={open} onClose={() => {
+                setOpen(false)
+                setSelectedImage(null)
+            }} />
         </div>
-        // <div
-        //     className="w-full"
-        //     style={{ display: isMobile ? 'none' : 'block' }}
-        // >
-        //     <div style={{ ...responsiveStyles.pin_container }}>
-        //         {images.map((im, idx) => (
-        //             <div
-        //                 key={idx}
-        //                 style={{
-        //                     ...responsiveStyles.card,
-        //                     ...responsiveStyles[randomSize()],
-        //                 }}
-        //             >
-        //                 <img
-        //                     src={im}
-        //                     alt="grid"
-        //                     style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-        //                 />
-        //             </div>
-        //         ))}
-        //     </div>
-        // </div>
     );
 };
 

@@ -1,8 +1,12 @@
 'use client'
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
+import ImageDetails from './ImageDetails';
 
 const Gallery = () => {
+    const [open, setOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
 
     const images = [
         '/images/gallery/1.jpeg', '/images/gallery/2.jpeg',
@@ -38,36 +42,24 @@ const Gallery = () => {
 
     return (
         <div>
-            {/* <div id="gallery" className='bg-white mt-4'>
-                <div className='p-3 pl-4 lg:p-8'>
-                    <div className="flex overflow-x-scroll space-x-4">
-                        {images.map((item, index) => <div key={index}>
-                            <div style={{ height: isMobile ? '250px' : '450px', width: isMobile ? '300px' : '600px' }} className=''>
-                                <Image width={isMobile ? 300 : 600} height={isMobile ? 250 : 450} className="rounded-md" src={item} alt="gallery" />
-                            </div>
-                        </div>
-                        )}
-                    </div>
-                </div>
-            </div> */}
+
             <div id="gallery" className='bg-white mt-2'>
 
                 <div className='p-3 pl-4 lg:p-8'>
-                    {/* <div className='bg-black text-white p-2 uppercase font-bold mb-4'>
-                        <h1>Our Agenda</h1>
-                    </div> */}
-                    {/* <div>
-                        <select className='bg-black text-white p-2 px-4 mb-4 font-semibold'>
-                            <option value='2024'>2024</option>
-                        </select>
-                    </div> */}
+
                     <div className="flex overflow-x-scroll space-x-4">
                         {imagesWithText.map((item, index) => <div key={index}>
                             <div style={{ width: isMobile ? '300px' : '500px' }} className=''>
                                 <img width={isMobile ? 300 : 500}
 
                                     style={{ height: isMobile ? 250 : 350, objectFit: 'cover' }}
-                                    src={item.image} alt="gallery" />
+                                    src={item.image} alt="gallery"
+                                    onClick={() => {
+                                        setOpen(true);
+                                        setSelectedImage(item.image);
+                                    }}
+
+                                />
                                 <div style={{ height: '70px' }}>
                                     <p className='my-4 px-2 text-sm'>{item.description}</p>
                                 </div>
@@ -81,6 +73,10 @@ const Gallery = () => {
                     </div>
                 </div>
             </div>
+            <ImageDetails image={selectedImage} open={open} onClose={() => {
+                setOpen(false)
+                setSelectedImage(null)
+            }} />
         </div>
     );
 };
