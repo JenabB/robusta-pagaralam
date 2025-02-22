@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
-import Link from 'next/link'
-import { Bars3Icon } from '@heroicons/react/24/solid';
-import navbar from '../constants/navbar';
+import Link from 'next/link';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
+import navbar from '../constants/navbar';
 
 const NavbarMobile = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,44 +12,74 @@ const NavbarMobile = () => {
     };
 
     return (
-        <nav className="p-4 sticky top-0 z-50" style={{ backgroundColor: '#545C36' }}>
+        <nav className="p-4 sticky top-0 z-50 bg-[#545C36]">
             <div className="flex items-center justify-between">
-                <button onClick={toggleMobileMenu} className="lg:hidden text-white focus:outline-none">
+                <button
+                    onClick={toggleMobileMenu}
+                    className="lg:hidden text-white focus:outline-none transition-transform duration-300 ease-in-out"
+                >
                     <Bars3Icon className="w-6 h-6" />
                 </button>
-                <a href='/'>
+                <Link href="/" className="flex items-center">
                     <Image
                         alt="logo"
                         src="/images/fazza-icon-circle.png"
                         width={30}
                         height={30}
                     />
-                </a>
-                <div>
-                </div>
+                </Link>
+                <div></div>
             </div>
 
+            {/* Overlay */}
             {mobileMenuOpen && (
-                <div style={{ backgroundColor: '#545C36' }} className={` w-8/12 w-lg:hidden fixed inset-0  transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-                    <div className="flex justify-end p-4">
-                        <button onClick={toggleMobileMenu} className="text-white focus:outline-none">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    <div className='p-4'>
-                        {navbar.map((item, index) =>
-                            <div className='my-4' key={index}>
-                                <Link href={item.path} onClick={() => setMobileMenuOpen(false)}>
-                                    <p className='text-white uppercase font-bold'>
-                                        {item.name}
-                                    </p></Link>
-                                <hr />
-                            </div>)}
-                    </div>
-                </div>
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 lg:hidden"
+                    onClick={toggleMobileMenu}
+                />
             )}
+
+            {/* Sidebar */}
+            <div
+                className={`
+                    fixed top-0 left-0 h-full w-8/12 bg-[#545C36] transform 
+                    transition-transform duration-300 ease-in-out lg:hidden
+                    ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
+                `}
+            >
+                <div className="flex justify-end p-4">
+                    <button
+                        onClick={toggleMobileMenu}
+                        className="text-white focus:outline-none transition-transform duration-300 hover:rotate-180"
+                    >
+                        <XMarkIcon className="w-6 h-6" />
+                    </button>
+                </div>
+
+                <div className="p-4">
+                    {navbar.map((item, index) => (
+                        <div
+                            key={index}
+                            className={`
+                                my-4 transform transition-all duration-300 ease-in-out
+                                ${mobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-[-100px] opacity-0'}
+                                delay-[${index * 100}ms]
+                            `}
+                        >
+                            <Link
+                                href={item.path}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="block"
+                            >
+                                <p className="text-white uppercase font-bold hover:text-gray-200 transition-colors duration-200">
+                                    {item.name}
+                                </p>
+                            </Link>
+                            <hr className="mt-2 border-white/20" />
+                        </div>
+                    ))}
+                </div>
+            </div>
         </nav>
     );
 };

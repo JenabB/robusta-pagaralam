@@ -49,7 +49,7 @@ const Gallery = () => {
 
                     <div className="flex overflow-x-scroll space-x-4">
                         {imagesWithText.map((item, index) => <div key={index}>
-                            <div style={{ width: isMobile ? '300px' : '500px' }} className=''>
+                            <div style={{ width: isMobile ? '300px' : '500px' }} className='cursor-pointer'>
                                 <img width={isMobile ? 300 : 500}
 
                                     style={{ height: isMobile ? 250 : 350, objectFit: 'cover' }}

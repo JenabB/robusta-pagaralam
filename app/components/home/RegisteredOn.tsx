@@ -7,10 +7,10 @@ const RegisteredOn = () => {
 
     return (
         <div className='text-center my-10 lg:my-24 px-4'>
-            <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 mt-0 lg:mt-10'>
+            <div className='flex gap-x-10 justify-center'>
                 {registeredImage.map((image, index) =>
                     <div key={index} className='flex justify-center'>
-                        <Image src={image} width={200} height={200} alt="registered on" />
+                        <Image src={image} width={100} height={150} alt="registered on" />
                     </div>
                 )}
             </div>

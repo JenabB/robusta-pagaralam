@@ -12,7 +12,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='sticky top-0 z-50 flex justify-between items-center p-5 text-white font-semibold' style={{
+        <div className='sticky top-0 z-50 flex justify-between items-center px-5 py-3 text-white font-semibold' style={{
             backgroundColor: '#545C36'
         }}>
             <div>

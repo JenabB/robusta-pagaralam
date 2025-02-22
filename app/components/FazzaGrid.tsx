@@ -49,7 +49,7 @@ const FazzaGrid = () => {
     return (
         <div>
             <div className='py-4' style={{ backgroundColor: '#FEFAEF' }}>
-                <div className='grid grid-cols-2 lg:grid-cols-4 lg:w-2/3 mx-auto'>
+                <div className='grid grid-cols-2 lg:grid-cols-4 lg:w-2/3 mx-auto cursor-pointer'>
                     {images.map((item, index) => <div key={index} className='m-1' onClick={() => {
                         setOpen(true);
                         setSelectedImage(item);

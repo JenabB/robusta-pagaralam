@@ -21,12 +21,12 @@ const AboutUs = () => {
 
             <div className=''>
                 <div className='bg-black text-white p-3 lg:p-8 col-span-2'>
-                    <p className='mb-4 p-3 text-justify'>
+                    <p className='mb-4 p-3 text-justify text-sm'>
                         <b> PT Fazza Indo Omaira</b> strives to run its business sustainably
                         As an international trading company, our company is run by
                         expertise and have a team that is committed to serving customers with
                         We obtain quality goods procurement services directly from farmers
-                        tall. Therefore, certification is an important element in our journey
+                        tall.<br /> Therefore, certification is an important element in our journey
                         Towards this, certification plays an important role. information about
                         Our performance and the areas that we need to continue to improve in order to improve
                         increase efficiency and productivity. We also work with partners
