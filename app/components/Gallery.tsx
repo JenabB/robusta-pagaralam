@@ -40,30 +40,45 @@ const Gallery = () => {
             <div id="gallery" className='bg-white mt-2'>
 
                 <div className='p-3 pl-4 lg:p-8'>
-
                     <div className="flex overflow-x-scroll space-x-4">
-                        {imagesWithText.map((item, index) => <div key={index}>
-                            <div style={{ width: isMobile ? '300px' : '500px' }} className='cursor-pointer'>
-                                <img width={isMobile ? 300 : 500}
+                        {imagesWithText.map((item, index) => (
+                            <div key={index}>
+                                <div
+                                    style={{ width: isMobile ? '300px' : '500px' }}
+                                    className="cursor-pointer relative"
+                                >
+                                    {/* Date component positioned at top right of the image */}
+                                    <div className="absolute top-3 right-3 z-10 py-1 px-3 rounded-2xl" id="date" style={{
+                                        backgroundColor: '#545c36'
+                                    }}>
+                                        <h1 className="font-bold uppercase text-white text-xs" style={{ letterSpacing: '0.5px' }}>
+                                            {item.year + " " + item.month + ' ' + item.date}
+                                        </h1>
+                                    </div>
 
-                                    style={{ height: isMobile ? 250 : 350, objectFit: 'cover' }}
-                                    src={item.image} alt="gallery"
-                                    onClick={() => {
-                                        setOpen(true);
-                                        setSelectedImage(item.image);
-                                    }}
+                                    {/* Description positioned at bottom of the image */}
+                                    <div
+                                        className="absolute bottom-0 left-0 right-0 z-10 p-3 bg-black bg-opacity-90 rounded-b-xl"
+                                        style={{ fontSize: '12px', height: '55px' }}
+                                    >
+                                        <p className="text-white">{item.description}</p>
+                                    </div>
 
-                                />
-                                <div style={{ height: '70px' }}>
-                                    <p className='my-4 px-2 text-sm'>{item.description}</p>
+                                    {/* Image */}
+                                    <img
+                                        width={isMobile ? 300 : 500}
+                                        style={{ height: isMobile ? 250 : 350, objectFit: 'cover' }}
+                                        src={item.image}
+                                        className='rounded-lg'
+                                        alt="gallery"
+                                        onClick={() => {
+                                            setOpen(true);
+                                            setSelectedImage(item.image);
+                                        }}
+                                    />
                                 </div>
-                                <div className='bg-black p-2 mb-4'>
-                                    <h1 className='font-bold uppercase text-white'>{item.year + " " + item.month + ' ' + item.date}</h1>
-                                </div>
-
                             </div>
-                        </div>
-                        )}
+                        ))}
                     </div>
                 </div>
             </div>
