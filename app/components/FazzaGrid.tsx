@@ -31,7 +31,8 @@ const FazzaGrid = () => {
         '/images/grid/7.webp',
         '/images/grid/8.webp',
         "/images/grid/9.webp",
-        '/images/grid/10.webp'
+        '/images/grid/10.webp',
+        '/images/grid/11.webp'
     ];
 
     const randomSize = () => {

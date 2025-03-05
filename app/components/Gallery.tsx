@@ -8,14 +8,8 @@ const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
 
-    const images = [
-        '/images/gallery/1.jpeg', '/images/gallery/2.jpeg',
-        '/images/gallery/5.jpeg', '/images/gallery/6.jpeg',
-        '/images/gallery/7.jpeg', '/images/gallery/8.jpeg', '/images/gallery/9.jpeg',
-        '/images/gallery/10.jpeg', '/images/gallery/12.jpeg',
-    ]
-
     const imagesWithText = [
+        { image: '/images/gallery/3-march-2025.webp', year: '2025', month: 'March', date: '3', description: `Coordination with supplier PTPN1 7th Regional Pagar Alam` },
         { image: '/images/gallery/9-december-2024.webp', year: '2024', month: 'December', date: '9', description: `attend local exporters' meetings to exchange knowledge.` },
         { image: '/images/gallery/14-april-2024.webp', year: '2024', month: 'April', date: '14', description: 'Visiting to tea product supplier factory.' },
         { image: '/images/gallery/march-2-2024.webp', year: '2024', month: 'March', date: '26', description: 'Chat to recognize the potential of local tea and cooperation in export with PTPN7.' },
