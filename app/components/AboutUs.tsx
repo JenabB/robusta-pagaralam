@@ -7,9 +7,9 @@ const AboutUs = () => {
         { name: 'Company Name', value: 'PT Fazza Indo Omaira' },
         { name: 'Company Type', value: 'Limited Company' },
         { name: 'Address', value: 'Jl. Mayjen S. Parman no 52, 31511 Kota Pagar Alam, Sumatera Selatan, Indonesia' },
-        { name: 'Taxpayer register number', value: '50.026.310.8-309.000' },
-        { name: 'Company register number', value: 'AHU-056670.AH.01.30' },
-        { name: 'Bank Account', value: '11' },
+        // { name: 'Taxpayer register number', value: '50.026.310.8-309.000' },
+        // { name: 'Company register number', value: 'AHU-056670.AH.01.30' },
+        // { name: 'Bank Account', value: '11' },
         { name: 'Phone', value: '+62 853-6888-5884' },
         { name: 'Email', value: 'info@fazz-indo-omaira.com' },
 
