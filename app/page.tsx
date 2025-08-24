@@ -23,6 +23,7 @@ import FazzaGrid from './components/FazzaGrid'
 import ShippingPort from './components/ShippingPort'
 import RibbonText from './components/RibbonText'
 import Payment from './components/Payment'
+import ProductList from './product/ProductList'
 
 
 export default function Home() {
@@ -36,10 +37,8 @@ export default function Home() {
       {/* <Featured /> */}
 
       <ProductHighlight />
-      {/* <Description1 />
-      <Description2 />
-      <Description3 />
-      <Description4 /> */}
+
+      <ProductList />
       <Payment />
       <AwardsandCertificates />
       <FazzaGrid />
