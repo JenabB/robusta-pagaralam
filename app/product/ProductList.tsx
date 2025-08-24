@@ -184,7 +184,7 @@ const ProductList: React.FC = () => {
     }
 
     const ProductCard: React.FC<ProductCardProps> = ({ product }) => (
-        <div id="product" className="bg-white border border-gray-100 rounded-lg hover:shadow-md transition-shadow duration-200 overflow-hidden group">
+        <div className="bg-white border border-gray-100 rounded-lg hover:shadow-md transition-shadow duration-200 overflow-hidden group">
             <div className="aspect-square overflow-hidden bg-gray-50">
                 <img
                     src={product.imageUrl}
@@ -223,6 +223,15 @@ const ProductList: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-white">
+            <style jsx>{`
+                .scrollbar-hide {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+                .scrollbar-hide::-webkit-scrollbar {
+                    display: none;
+                }
+            `}</style>
             {/* Header */}
             <div className="bg-white border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
@@ -240,12 +249,12 @@ const ProductList: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
                 {/* Category Filter */}
                 <div className="mb-12">
-                    <div className="flex flex-wrap justify-center gap-2">
+                    <div className="flex overflow-x-auto scrollbar-hide gap-2 pb-2 md:flex-wrap md:justify-center md:overflow-visible">
                         <button
                             onClick={() => handleCategoryChange('all')}
-                            className={`px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${selectedCategory === 'all'
-                                ? 'bg-gray-900 text-white'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${selectedCategory === 'all'
+                                    ? 'bg-gray-900 text-white'
+                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             All ({getAllProducts().length})
@@ -254,9 +263,9 @@ const ProductList: React.FC = () => {
                             <button
                                 key={key}
                                 onClick={() => handleCategoryChange(key as CategoryKey)}
-                                className={`px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${selectedCategory === key
-                                    ? 'bg-gray-900 text-white'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${selectedCategory === key
+                                        ? 'bg-gray-900 text-white'
+                                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                     }`}
                             >
                                 {category.categoryName.split(' (')[0]} ({category.products.length})
@@ -266,7 +275,7 @@ const ProductList: React.FC = () => {
                 </div>
 
                 {/* Products Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
                     {filteredProducts.map((product: ProductWithCategory, index: number) => (
                         <ProductCard key={`${product.category}-${index}`} product={product} />
                     ))}
