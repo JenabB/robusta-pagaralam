@@ -38,7 +38,7 @@ const Header = () => {
         <div >
             <div className='text-white text-center px-4 py-32' style={{
                 backgroundColor: '#545C36',
-                backgroundImage: 'url(/images/header.webp)',
+                backgroundImage: 'url(/images/banner/hero.webp)',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 filter: 'grayscale(60%)',

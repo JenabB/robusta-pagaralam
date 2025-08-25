@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ImageDetails from '../components/ImageDetails';
 
 // Type definitions
 interface Product {
@@ -26,6 +27,8 @@ type CategoryKey = keyof CommoditiesData | 'all';
 
 const ProductList: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState<CategoryKey>('all');
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [open, setOpen] = useState<boolean>(false);
 
     const indonesianCommodities: CommoditiesData = {
         spices: {
@@ -66,6 +69,21 @@ const ProductList: React.FC = () => {
                     name: 'Kayu Manis',
                     englishName: 'Cinnamon',
                     imageUrl: '/images/product/spices/kayu-manis.webp',
+                },
+                {
+                    name: 'Cinnamon Stik',
+                    englishName: 'Cinnamon Stick',
+                    imageUrl: '/images/product/spices/cinnamon-stik.webp',
+                },
+                {
+                    name: 'Cinnamon Broken',
+                    englishName: 'Cinnamon Broken',
+                    imageUrl: '/images/product/spices/cinnamon-broken.webp',
+                },
+                {
+                    name: 'Cinnamon Powder',
+                    englishName: 'Cinnamon Powder',
+                    imageUrl: '/images/product/spices/cinnamon-powder.webp',
                 },
             ],
         },
@@ -125,6 +143,31 @@ const ProductList: React.FC = () => {
                     englishName: 'Copra',
                     imageUrl: '/images/product/coconut-products/kopra.webp',
                 },
+                {
+                    name: 'Kelapa Semi Kupas',
+                    englishName: 'Semi Husked Coconut',
+                    imageUrl: '/images/product/coconut-products/kelapa-semi-kupas.webp',
+                },
+                {
+                    name: 'Kelapa Kupas',
+                    englishName: 'Husked Coconut',
+                    imageUrl: '/images/product/coconut-products/kelapa-kupas.webp',
+                },
+                {
+                    name: 'Kelapa Parut Kering',
+                    englishName: 'Desiccated Coconut',
+                    imageUrl: '/images/product/coconut-products/kelapa-parut-kering.webp',
+                },
+                {
+                    name: 'Kopra Putih',
+                    englishName: 'White Copra',
+                    imageUrl: '/images/product/coconut-products/kopra-putih.webp',
+                },
+                {
+                    name: 'Kopra Hitam',
+                    englishName: 'Black Copra',
+                    imageUrl: '/images/product/coconut-products/kopra-hitam.webp',
+                },
             ],
         },
         'palm-oil-products': {
@@ -141,6 +184,7 @@ const ProductList: React.FC = () => {
                     englishName: 'Palm Kernel Meal',
                     imageUrl: '/images/product/palm-oil-products/bungkil-sawit.webp',
                 },
+
             ],
         },
         'other-commodities': {
@@ -151,6 +195,21 @@ const ProductList: React.FC = () => {
                     name: 'Pinang',
                     englishName: 'Areca Nut',
                     imageUrl: '/images/product/other-commodities/pinang.webp',
+                },
+                {
+                    name: 'Pinang Kering',
+                    englishName: 'Dried Areca Nut',
+                    imageUrl: '/images/product/other-commodities/pinang-kering.webp',
+                },
+                {
+                    name: 'Pinang Utuh',
+                    englishName: 'Whole Areca Nut',
+                    imageUrl: '/images/product/other-commodities/pinang-utuh.webp',
+                },
+                {
+                    name: 'Pinang Iris',
+                    englishName: 'Sliced Areca Nut',
+                    imageUrl: '/images/product/other-commodities/pinang-iris.webp',
                 },
             ],
         },
@@ -190,18 +249,22 @@ const ProductList: React.FC = () => {
                     src={product.imageUrl}
                     alt={product.englishName}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = `https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&h=400&fit=crop&crop=center`;
+                    onClick={() => {
+                        setOpen(true);
+                        setSelectedImage(product.imageUrl)
                     }}
+                // onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                //     const target = e.target as HTMLImageElement;
+                //     target.src = `https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&h=400&fit=crop&crop=center`;
+                // }}
                 />
             </div>
             <div className="p-4">
                 <h3 className="font-semibold text-gray-900 mb-1">
-                    {product.name}
-                </h3>
-                <p className="text-gray-500 text-sm mb-3">
                     {product.englishName}
+                </h3>
+                <p className="text-gray-500 text-xs mb-3">
+                    {product.name}
                 </p>
                 <button
                     className="w-full bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium py-2.5 px-4 rounded-md transition-colors duration-200"
@@ -214,6 +277,7 @@ const ProductList: React.FC = () => {
                     Chat Now
                 </button>
             </div>
+
         </div>
     );
 
@@ -223,6 +287,10 @@ const ProductList: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-white">
+            <ImageDetails image={selectedImage} open={open} onClose={() => {
+                setOpen(false)
+                setSelectedImage(null)
+            }} />
             <style jsx>{`
                 .scrollbar-hide {
                     -ms-overflow-style: none;
@@ -253,8 +321,8 @@ const ProductList: React.FC = () => {
                         <button
                             onClick={() => handleCategoryChange('all')}
                             className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${selectedCategory === 'all'
-                                    ? 'bg-gray-900 text-white'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                ? 'bg-gray-900 text-white'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             All ({getAllProducts().length})
@@ -264,8 +332,8 @@ const ProductList: React.FC = () => {
                                 key={key}
                                 onClick={() => handleCategoryChange(key as CategoryKey)}
                                 className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${selectedCategory === key
-                                        ? 'bg-gray-900 text-white'
-                                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                    ? 'bg-gray-900 text-white'
+                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                     }`}
                             >
                                 {category.categoryName.split(' (')[0]} ({category.products.length})
