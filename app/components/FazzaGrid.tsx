@@ -22,6 +22,11 @@ const FazzaGrid = () => {
     }, []);
 
     const images = [
+        '/images/grid/12.webp',
+        '/images/grid/13.webp',
+        '/images/grid/14.webp',
+        '/images/grid/15.webp',
+
         '/images/grid/1.webp',
         '/images/grid/2.webp',
         '/images/grid/3.webp',

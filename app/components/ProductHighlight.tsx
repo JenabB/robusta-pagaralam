@@ -2,10 +2,28 @@ import React, { useState } from 'react';
 import tea from '@/app/data/tea.json';
 import Slider from 'react-slick';
 import ImageDetails from './ImageDetails';
+import OrderFormModal from './OrderFormModal';
 
-const ProductHighlight = () => {
+interface TeaItem {
+    name: string;
+    description: string;
+    child: {
+        name: string;
+        images: string[];
+    }[];
+}
+
+interface TeaData {
+    tea: TeaItem[];
+}
+
+const ProductHighlight: React.FC = () => {
     const [open, setOpen] = useState<boolean>(false);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+    // State untuk modal order form
+    const [showOrderForm, setShowOrderForm] = useState<boolean>(false);
+    const [selectedProduct, setSelectedProduct] = useState<string>('');
 
     const settings = {
         dots: false,
@@ -16,13 +34,11 @@ const ProductHighlight = () => {
         speed: 800,
     };
 
-    const handleBuyNowClick = (product: string) => {
-        const phoneNumber = '6285368885884';
-        const message = `Hello Fazza! i want to order ${product}`;
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
-
-        window.open(whatsappUrl, '_blank');
+    // Update fungsi handleBuyNowClick untuk membuka modal form (TIDAK langsung ke WhatsApp)
+    const handleBuyNowClick = (product: string): void => {
+        console.log('Opening modal for product:', product); // Debug log
+        setSelectedProduct(product);
+        setShowOrderForm(true);
     };
 
     return (
@@ -36,6 +52,9 @@ const ProductHighlight = () => {
                             <h1 className="font-bold text-xl text-center uppercase font-poppins">
                                 Pagar Alam Robusta Coffee
                             </h1>
+                            <div className='my-10'>
+                                <img src="/images/product/coffee/coffee-2.webp" style={{ width: '100%' }} />
+                            </div>
                             <p className="mt-4 font-poppins text-sm">
                                 Pagar Alam Robusta Coffee is a premium coffee sourced from the highlands of South Sumatera.
                                 Characterized by its strong flavor, full body, and distinctive aroma, this coffee features
@@ -66,7 +85,7 @@ const ProductHighlight = () => {
                                 <div
                                     onClick={() => {
                                         setOpen(true);
-                                        setSelectedImage('/images/product/coffee/coffee.webp'); // Ganti dengan path gambar kopi yang sesuai
+                                        setSelectedImage('/images/product/coffee/coffee.webp');
                                     }}
                                 >
                                     <img
@@ -75,7 +94,7 @@ const ProductHighlight = () => {
                                             height: '250px',
                                             objectFit: 'cover',
                                         }}
-                                        src="/images/product/coffee/coffee.webp" // Ganti dengan path gambar kopi yang sesuai
+                                        src="/images/product/coffee/coffee.webp"
                                         alt="Kopi Robusta Pagar Alam"
                                     />
                                 </div>
@@ -100,7 +119,7 @@ const ProductHighlight = () => {
 
                     {/* Right Side - Tea Section */}
                     <div className="flex flex-col">
-                        {tea.tea.map((item, index) => (
+                        {(tea as TeaData).tea.map((item, index) => (
                             <div key={index}>
                                 <div className="p-4 mb-10">
                                     <div className="pt-0">
@@ -158,10 +177,23 @@ const ProductHighlight = () => {
                     </div>
                 </div>
             </div>
-            <ImageDetails image={selectedImage} open={open} onClose={() => {
-                setOpen(false)
-                setSelectedImage(null)
-            }} />
+
+            {/* Modal untuk menampilkan detail gambar */}
+            <ImageDetails
+                image={selectedImage}
+                open={open}
+                onClose={() => {
+                    setOpen(false)
+                    setSelectedImage(null)
+                }}
+            />
+
+            {/* Modal untuk form order */}
+            <OrderFormModal
+                show={showOrderForm}
+                onHide={() => setShowOrderForm(false)}
+                productName={selectedProduct}
+            />
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ImageDetails from '../components/ImageDetails';
+import OrderFormModal from '../components/OrderFormModal';
 
 // Type definitions
 interface Product {
@@ -29,6 +30,10 @@ const ProductList: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState<CategoryKey>('all');
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [open, setOpen] = useState<boolean>(false);
+
+    // States untuk order form modal
+    const [showOrderForm, setShowOrderForm] = useState<boolean>(false);
+    const [selectedProduct, setSelectedProduct] = useState<string>('');
 
     const indonesianCommodities: CommoditiesData = {
         spices: {
@@ -238,13 +243,19 @@ const ProductList: React.FC = () => {
             categoryName: indonesianCommodities[selectedCategory as string].categoryName
         })) || [];
 
+    // Handle chat now click - open modal instead of direct WhatsApp
+    const handleChatNowClick = (product: ProductWithCategory): void => {
+        setSelectedProduct(product.englishName);
+        setShowOrderForm(true);
+    };
+
     interface ProductCardProps {
         product: ProductWithCategory;
     }
 
     const ProductCard: React.FC<ProductCardProps> = ({ product }) => (
         <div className="bg-white border border-gray-100 rounded-lg hover:shadow-md transition-shadow duration-200 overflow-hidden group">
-            <div className="aspect-square overflow-hidden bg-gray-50">
+            <div className="aspect-square overflow-hidden bg-gray-50 cursor-pointer">
                 <img
                     src={product.imageUrl}
                     alt={product.englishName}
@@ -253,10 +264,6 @@ const ProductList: React.FC = () => {
                         setOpen(true);
                         setSelectedImage(product.imageUrl)
                     }}
-                // onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-                //     const target = e.target as HTMLImageElement;
-                //     target.src = `https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&h=400&fit=crop&crop=center`;
-                // }}
                 />
             </div>
             <div className="p-4">
@@ -267,17 +274,12 @@ const ProductList: React.FC = () => {
                     {product.name}
                 </p>
                 <button
-                    className="w-full bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium py-2.5 px-4 rounded-md transition-colors duration-200"
-                    onClick={() => {
-                        const message = `Hello Fazza! I want to ask about ${product.englishName}`;
-                        const whatsappUrl = `https://wa.me/6285368885884?text=${encodeURIComponent(message)}`;
-                        window.open(whatsappUrl, '_blank');
-                    }}
+                    className="w-full bg-[#545C36] hover:bg-[#4a5230] text-white text-sm font-medium py-2.5 px-4 rounded-md transition-all duration-200 transform hover:scale-105"
+                    onClick={() => handleChatNowClick(product)}
                 >
-                    Chat Now
+                    Request Quote
                 </button>
             </div>
-
         </div>
     );
 
@@ -287,10 +289,23 @@ const ProductList: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-white">
-            <ImageDetails image={selectedImage} open={open} onClose={() => {
-                setOpen(false)
-                setSelectedImage(null)
-            }} />
+            {/* Image Details Modal */}
+            <ImageDetails
+                image={selectedImage}
+                open={open}
+                onClose={() => {
+                    setOpen(false)
+                    setSelectedImage(null)
+                }}
+            />
+
+            {/* Order Form Modal */}
+            <OrderFormModal
+                show={showOrderForm}
+                onHide={() => setShowOrderForm(false)}
+                productName={selectedProduct}
+            />
+
             <style jsx>{`
                 .scrollbar-hide {
                     -ms-overflow-style: none;
@@ -300,6 +315,7 @@ const ProductList: React.FC = () => {
                     display: none;
                 }
             `}</style>
+
             {/* Header */}
             <div className="bg-white border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
@@ -321,7 +337,7 @@ const ProductList: React.FC = () => {
                         <button
                             onClick={() => handleCategoryChange('all')}
                             className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${selectedCategory === 'all'
-                                ? 'bg-gray-900 text-white'
+                                ? 'bg-[#545C36] text-white'
                                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
@@ -332,7 +348,7 @@ const ProductList: React.FC = () => {
                                 key={key}
                                 onClick={() => handleCategoryChange(key as CategoryKey)}
                                 className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${selectedCategory === key
-                                    ? 'bg-gray-900 text-white'
+                                    ? 'bg-[#545C36] text-white'
                                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                     }`}
                             >
